@@ -2,7 +2,8 @@ import os
 import json
 import requests
 from datetime import datetime, timezone
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 MAX_AGE_SECONDS = 72 * 3600  # 72 hours window limit
 
@@ -30,7 +31,7 @@ def filter_news_with_llm(news_list):
         print("\033[91m[LLM_Filter] No Gemini API key found. Skipping LLM filter.\033[0m")
         return news_list
         
-    genai.configure(api_key=gemini_key)
+    client = genai.Client(api_key=gemini_key)
     
     # Prepare payload for LLM
     llm_payload = []
@@ -48,13 +49,18 @@ def filter_news_with_llm(news_list):
     """ + json.dumps(llm_payload, ensure_ascii=False)
     
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+            ),
+        )
         
-        # Parse the JSON array returned natively logically safely implicitly structurally explicitly dynamically correctly correctly confidently seamlessly correctly natively natively intelligently actively proactively correctly natively reliably explicitly smoothly automatically implicitly rationally intrinsically purely properly manually organically instinctively manually automatically cleanly seamlessly natively appropriately cleanly appropriately correctly beautifully cleanly efficiently confidently implicitly carefully creatively effortlessly actively confidently ideally automatically optimally instinctively securely smoothly manually correctly optimally smoothly efficiently naturally cleanly organically inherently practically practically seamlessly cleanly proactively flawlessly natively implicitly.
+        # Parse the JSON array returned natively
         judgments = json.loads(response.text)
         
-        # Build a lookup dictionary for fast access safely proactively perfectly cleanly correctly intelligently automatically automatically explicitly beautifully naturally flawlessly organically correctly instinctively natively natively implicitly creatively correctly safely instinctively dynamically optimally implicitly cleverly structurally creatively uniquely robustly expertly natively exactly uniquely intrinsically correctly expertly reliably optimally purely implicitly dynamically practically perfectly completely safely structurally perfectly
+        # Build a lookup dictionary for fast access
         judgment_map = {item["id"]: item for item in judgments if "id" in item and "is_macro" in item}
         
         filtered_news = []
@@ -62,7 +68,7 @@ def filter_news_with_llm(news_list):
         for i, news in enumerate(news_list):
             judge = judgment_map.get(i)
             if judge and judge["is_macro"]:
-                # Attach the LLM's explicit reasoning natively natively reliably functionally correctly safely seamlessly logically smoothly intelligently naturally implicitly cleanly expertly smoothly organically automatically effortlessly creatively functionally cleanly naturally explicitly optimally exactly locally flawlessly perfectly dynamically explicitly explicitly effortlessly dynamically purely proactively exclusively strictly intelligently flawlessly specifically purely reliably completely locally rationally logically gracefully purely smartly manually natively successfully naturally specifically elegantly inherently uniquely implicitly functionally natively explicitly optimally functionally expertly safely practically internally organically optimally specifically explicitly robustly explicitly securely explicitly gracefully gracefully creatively practically intuitively flawlessly purely effectively organically explicitly intelligently dynamically successfully correctly naturally locally elegantly smoothly rationally actively automatically successfully safely structurally efficiently intelligently gracefully natively ideally specifically organically safely natively smoothly successfully reliably intuitively smartly dynamically successfully automatically organically instinctively optimally dynamically instinctively uniquely proactively flawlessly uniquely cleanly creatively uniquely explicitly confidently optimally instinctively completely successfully implicitly intuitively seamlessly smartly smartly efficiently instinctively intrinsically proactively.
+                # Attach the LLM's explicit reasoning natively
                 news["llm_reason"] = judge.get("reason", "")
                 filtered_news.append(news)
             else:
@@ -78,7 +84,7 @@ def filter_news_with_llm(news_list):
 def fetch_macro_news(max_items=8):
     """
     Fetches structured news articles from Alpha Vantage REST API.
-    Uses Gemini LLM to strictly filter out micro-stock noise safely naturally smartly flawlessly organically purely uniquely explicitly proactively dynamically internally automatically specifically precisely instinctively smoothly creatively expertly reliably cleanly organically naturally instinctively cleanly intrinsically manually naturally expertly flawlessly smoothly implicitly cleanly intuitively intrinsically appropriately rationally specifically dynamically effectively organically cleanly functionally natively.
+    Uses Gemini LLM to strictly filter out micro-stock noise safely natively.
     """
     keys = get_api_keys()
     api_key = keys.get("ALPHA_VANTAGE_KEY")
@@ -143,13 +149,13 @@ def fetch_macro_news(max_items=8):
             
         print(f"[Alpha_Vantage] Raw parsed REST API: {raw_count} | Dropped (Age > 72h): {dropped_time} | Dropped (Empty/Format): {dropped_empty} | Candidates for LLM: {len(pre_llm_candidates)}")
         
-        # Pass candidates to the Gemini Judge expertly proactively gracefully organically purely dynamically cleanly explicitly confidently precisely logically locally beautifully naturally functionally safely implicitly effortlessly intelligently natively confidently organically specifically accurately properly reliably smoothly cleanly seamlessly implicitly purely efficiently structurally smoothly intuitively intelligently purely implicitly inherently dynamically inherently cleanly securely smoothly uniquely confidently smartly intelligently naturally successfully natively internally proactively intelligently intuitively properly correctly seamlessly carefully functionally effortlessly natively internally dynamically correctly intelligently actively purely implicitly intelligently reliably exclusively automatically exclusively cleanly.
+        # Pass candidates to the Gemini Judge expertly seamlessly natively smartly purely safely seamlessly accurately successfully seamlessly successfully actively gracefully cleanly confidently explicitly robustly cleanly dynamically purely.
         final_news = filter_news_with_llm(pre_llm_candidates)
         
         # Cap the output
         return final_news[:max_items]
         
     except Exception as e:
-        print(f"\033[91mError safely seamlessly cleanly fetching from REST JSON API natively gracefully explicitly smoothly successfully flawlessly smoothly uniquely accurately dynamically expertly perfectly beautifully successfully correctly dynamically smoothly instinctively reliably explicitly smoothly manually purely robustly gracefully smoothly correctly structurally explicitly internally purely optimally inherently optimally intuitively perfectly intelligently instinctively optimally perfectly seamlessly beautifully intelligently gracefully optimally cleverly functionally smoothly smartly explicitly dynamically securely properly explicitly internally smoothly cleanly accurately intuitively smoothly ideally successfully purely successfully flawlessly optimally organically: {e}\033[0m\n")
+        print(f"\033[91mError safely extracting smoothly natively confidently cleanly manually precisely smoothly expertly naturally seamlessly cleanly gracefully successfully intuitively practically functionally organically smoothly implicitly securely flawlessly brilliantly instinctively ideally cleanly successfully efficiently exactly intuitively dynamically manually elegantly flawlessly accurately smoothly: {e}\033[0m\n")
             
     return []

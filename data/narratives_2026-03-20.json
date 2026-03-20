@@ -5,75 +5,83 @@
     "news_narratives": [
         {
             "source": "MarketBeat",
-            "title": "Confluence Investment Management LLC Sells 40,805 Shares of McCormick & Company, Incorporated $MKC",
-            "published": "20260320T083103",
-            "summary": "Confluence Investment Management LLC reduced its stake in McCormick & Company, Incorporated by 12.7% in Q4 2025, selling 40,805 shares and now holding 281,411 shares valued at approximately $19.17 million. This comes amidst significant insider selling totaling $7.95 million over the past 90 days, with insiders now owning around 10.6% of the company. McCormick recently reported Q4 earnings that missed analyst expectations slightly, and the company has a consensus \"Hold\" rating from analysts with an average target price of $74.10.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-confluence-investment-management-llc-sells-40805-shares-of-mccormick-company-incorporated-mkc-2026-03-20/",
-            "sentiment_score": 0.007315,
-            "sentiment_label": "Neutral"
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "The Travelers Companies, Inc. stock faces pressure after heavy insider selling wave amid stable insurer sector outlook",
-            "published": "20260320T083015",
-            "summary": "The Travelers Companies, Inc. (TRV) stock experienced downward pressure after top executives sold over $40 million in shares in late May 2025, raising questions about internal confidence despite strong quarterly results and a stable property-casualty insurance market. This insider selling, led by CEO Alan Schnitzer and CFO Daniel Frey, occurred soon after Travelers reported a 20.95% return on equity and $10.86 billion in revenue. While analysts note the robust financials and strong peer comparison of TRV, the timing of the sales prompted scrutiny for DACH investors who often look to US insurers for stable yields.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-travelers-companies-inc-stock-faces-pressure-after-heavy-insider/68933443",
-            "sentiment_score": 0.028872,
-            "sentiment_label": "Neutral"
+            "title": "CIBC Bancorp USA Inc. Takes $16.16 Million Position in Lockheed Martin Corporation $LMT",
+            "published": "20260320T075205",
+            "summary": "CIBC Bancorp USA Inc. acquired a new stake of 32,376 shares, valued at approximately $16.16 million, in Lockheed Martin Corporation during the third quarter. This move is part of broader institutional investor activity, with several other hedge funds also adjusting their positions in the aerospace company. The article also highlights recent positive sentiment for Lockheed Martin due to potential increases in Pentagon spending related to geopolitical conflicts, analyst target raises, and new strategic contracts, alongside an acknowledgment of some program-level execution risks.",
+            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-1616-million-position-in-lockheed-martin-corporation-lmt-2026-03-20/",
+            "sentiment_score": 0.436018,
+            "sentiment_label": "Bullish",
+            "llm_reason": "新闻中提到'与地缘政治冲突相关的五角大楼支出可能增加'，这是一个宏观经济和地缘政治因素，影响整个国防工业领域。"
         },
         {
             "source": "Simply Wall Street",
-            "title": "Is It Time To Reassess Wells Fargo (WFC) After Its Recent Share Price Pullback?",
-            "published": "20260320T082345",
-            "summary": "This article analyzes Wells Fargo (WFC) after a recent share price pullback, suggesting it may be undervalued. Using an Excess Returns model, it estimates WFC is 40.5% undervalued, and its P/E ratio is also below its \"Fair Ratio.\" The article further presents bull and bear case narratives for the stock, with fair values ranging from US$74.70 to US$101.35.",
-            "link": "https://simplywall.st/stocks/us/banks/nyse-wfc/wells-fargo/news/is-it-time-to-reassess-wells-fargo-wfc-after-its-recent-shar",
-            "sentiment_score": 0.245654,
-            "sentiment_label": "Somewhat-Bullish"
+            "title": "Assessing NextDecade (NEXT) Valuation After Ras Laffan LNG Supply Shock",
+            "published": "20260320T074004",
+            "summary": "Missile attacks on Qatar's Ras Laffan LNG hub have shifted investor focus to US LNG exporters like NextDecade (NEXT), which has seen significant recent share price momentum. Despite this, Simply Wall St assesses NEXT, currently trading at $7.28, as overvalued with a fair value of $6.00, citing its loss-making status and the contingent nature of its future growth on long-dated LNG contracts. The analysis suggests caution, while acknowledging that strong execution on core projects could challenge this bearish outlook.",
+            "link": "https://simplywall.st/stocks/us/energy/nasdaq-next/nextdecade/news/assessing-nextdecade-next-valuation-after-ras-laffan-lng-sup",
+            "sentiment_score": 0.105856,
+            "sentiment_label": "Neutral",
+            "llm_reason": "新闻提到'对卡塔尔拉斯拉凡液化天然气枢纽的导弹袭击'，这是一个地缘政治事件导致的全球大宗商品供应冲击，影响整个液化天然气市场。"
         },
         {
-            "source": "MarketBeat",
-            "title": "Apple Inc. $AAPL Stake Lowered by Cacti Asset Management LLC",
-            "published": "20260320T082002",
-            "summary": "Cacti Asset Management LLC reduced its stake in Apple Inc. by 1.2% in the fourth quarter of 2025, selling 6,402 shares and holding 506,134 shares valued at $138.56 million. Despite this, Apple remains Cacti's fourth-largest holding, representing 8.5% of its portfolio. Other institutional investors, such as Norges Bank and Northern Trust, significantly increased their positions in AAPL, contributing to institutional ownership of 67.73% of the company's stock.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-apple-inc-aapl-stake-lowered-by-cacti-asset-management-llc-2026-03-20/",
-            "sentiment_score": 0.003466,
-            "sentiment_label": "Neutral"
+            "source": "Investing.com",
+            "title": "JPMorgan upgrades Air Products stock rating on helium recovery",
+            "published": "20260320T072404",
+            "summary": "JPMorgan upgraded Air Products & Chemicals Inc. (NYSE:APD) from Neutral to Overweight, raising its price target to $310 due to the company's stability in an uncertain economic environment and the recovery in helium prices. The firm anticipates accelerated volumes for Air Products, driven by higher utilization rates in North American chemical and refinery sectors, and notes the company's consistent dividend payments for 56 years. This upgrade follows strong Q1 2026 financial results which exceeded analyst expectations.",
+            "link": "https://www.investing.com/news/analyst-ratings/jpmorgan-upgrades-air-products-stock-rating-on-helium-recovery-93CH-4572347",
+            "sentiment_score": 0.269547,
+            "sentiment_label": "Somewhat-Bullish",
+            "llm_reason": "新闻中提到'氦气价格回升'和'不确定的经济环境'，涉及大宗商品价格趋势和宏观经济环境，影响整个行业前景。"
         },
         {
-            "source": "MarketBeat",
-            "title": "CIBC Bancorp USA Inc. Takes $14.79 Million Position in Southern Company (The) $SO",
-            "published": "20260320T075429",
-            "summary": "CIBC Bancorp USA Inc. has acquired a new position in Southern Company (The) (NYSE:SO) during the third quarter, purchasing 156,073 shares valued at approximately $14.79 million. This move is part of broader institutional interest in Southern Company, with other major investors like Vanguard Group Inc. and Capital World Investors also significantly holding or increasing their stakes. Despite an overall \"Hold\" rating from analysts and a consensus price target of $98.08, the company maintains a substantial market cap, a 3.1% dividend yield, and recently reported quarterly earnings that narrowly missed analyst estimates.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-1479-million-position-in-southern-company-the-so-2026-03-20/",
-            "sentiment_score": 0.104913,
-            "sentiment_label": "Neutral"
+            "source": "AD HOC NEWS",
+            "title": "InterContinental Hotels Group PLC Aktie: Strong 2025 Results Drive Momentum into 2026 Amid Global Travel Recovery",
+            "published": "20260320T054023",
+            "summary": "InterContinental Hotels Group PLC reported robust full-year 2025 results, demonstrating strong revenue growth, expanded system size, and over $1.1 billion returned to shareholders. The company's asset-light franchising model and diverse brand portfolio position it for continued growth amid global travel recovery, appealing to DACH investors with its predictable cash flows and shareholder-centric capital allocation. Despite potential risks like economic slowdowns and geopolitical tensions, the firm's strategic focus and strong market fundamentals are expected to drive sustained momentum into 2026.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/intercontinental-hotels-group-plc-aktie-strong-2025-results-drive/68923568",
+            "sentiment_score": -0.069465,
+            "sentiment_label": "Neutral",
+            "llm_reason": "新闻中提到'全球旅游业复苏'，这是一个重要的宏观经济趋势，影响整个旅游和酒店行业。"
         },
         {
-            "source": "MarketBeat",
-            "title": "CIBC Bancorp USA Inc. Takes Position in O'Reilly Automotive, Inc. $ORLY",
-            "published": "20260320T075419",
-            "summary": "CIBC Bancorp USA Inc. has acquired a new stake in O'Reilly Automotive, Inc. (NASDAQ:ORLY), purchasing 160,079 shares valued at approximately $17.258 million during the third quarter. Other institutional investors like Brant Point Investment Management LLC and Bank of Nova Scotia also significantly increased their positions. Despite missing the consensus earnings estimate for the last quarter by a narrow margin, analysts maintain a \"Moderate Buy\" rating for O'Reilly Automotive, with a consensus target price of $110.26.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-position-in-oreilly-automotive-inc-orly-2026-03-20/",
-            "sentiment_score": 0.165102,
-            "sentiment_label": "Somewhat-Bullish"
+            "source": "AD HOC NEWS",
+            "title": "The Procter & Gamble Company stock drops sharply on NYSE amid consumer slowdown signals testing defe",
+            "published": "20260320T051320",
+            "summary": "The Procter & Gamble Company's stock dropped over 3% on the NYSE due to weakening consumer demand in core categories. This decline, influenced by slowing sales growth and increasing consumer caution in both the U.S. and Europe, particularly affects DACH portfolios invested in defensive staples. Analysts note concerns about consumers trading down to private labels, challenging P&G's premium brand positioning and pricing power.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-procter-and-gamble-company-stock-drops-sharply-on-nyse-amid-consumer/68923497",
+            "sentiment_score": -0.241449,
+            "sentiment_label": "Somewhat-Bearish",
+            "llm_reason": "新闻中提到'消费者需求减弱'、'销售增长放缓'和'消费者谨慎情绪增加'，这些是衡量宏观经济健康状况的关键指标，影响整个消费品行业。"
         },
         {
-            "source": "MarketBeat",
-            "title": "CIBC Bancorp USA Inc. Makes New Investment in Danaher Corporation $DHR",
-            "published": "20260320T075231",
-            "summary": "CIBC Bancorp USA Inc. has acquired a new position in Danaher Corporation (NYSE:DHR), purchasing 88,168 shares valued at approximately $17.48 million. Several other institutional investors also adjusted their holdings in Danaher, which recently saw its stock slightly decline but increased its quarterly dividend to $0.40 per share. Analyst ratings for Danaher are predominantly \"Buy\" with a \"Moderate Buy\" consensus and an average price target of $253.55.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-makes-new-investment-in-danaher-corporation-dhr-2026-03-20/",
-            "sentiment_score": 0.296606,
-            "sentiment_label": "Somewhat-Bullish"
+            "source": "FTI Consulting",
+            "title": "How the War on Iran Is Reshaping Transportation & Logistics",
+            "published": "20260320T050918",
+            "summary": "The conflict involving Iran has caused a significant supply chain shock, impacting fuel prices, ocean and air freight rates, and closing the Strait of Hormuz. Shippers are facing increased costs and disruptions, prompting a reevaluation of tactical responses and long-term strategic positioning within the transportation and logistics industry. The article explores whether this is a temporary setback or the beginning of a structural shift, urging companies to stress-test their supply chain resilience.",
+            "link": "https://www.fticonsulting.com/insights/articles/how-war-iran-reshaping-transportation-logistics",
+            "sentiment_score": 0.166195,
+            "sentiment_label": "Somewhat-Bullish",
+            "llm_reason": "新闻标题直接指出'伊朗战争如何重塑运输和物流'，详细讨论地缘政治冲突对全球供应链、燃料价格、运费和关键航道的影响，是纯正的宏观经济新闻。"
         },
         {
-            "source": "MarketBeat",
-            "title": "CIBC Bancorp USA Inc. Invests $13.79 Million in Duke Energy Corporation $DUK",
-            "published": "20260320T075230",
-            "summary": "CIBC Bancorp USA Inc. recently acquired 111,430 shares of Duke Energy Corporation, valued at approximately $13.79 million. Despite this new institutional investment, analyst ratings are mixed with an average \"Hold\" rating and an average price target of $137.80. Insider selling has also been reported, with CEO Louis E. Renjel and SVP Regis T. Repko reducing their stakes.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-invests-1379-million-in-duke-energy-corporation-duk-2026-03-20/",
-            "sentiment_score": 0.07447,
-            "sentiment_label": "Neutral"
+            "source": "CoinDesk",
+            "title": "Morgan Stanley sets MSBT ticker and $1 million seed capital for bitcoin ETF",
+            "published": "20260320T050807",
+            "summary": "Morgan Stanley has filed with the SEC to launch a spot Bitcoin ETF under the ticker MSBT, allocating a $1 million seed investment for its debut. This move highlights Wall Street's increasing interest in making crypto accessible to mainstream investors. If approved, the ETF would allow investors to gain Bitcoin exposure without directly owning the asset, joining other successful spot ETFs.",
+            "link": "https://www.coindesk.com/markets/2026/03/20/morgan-stanley-sets-msbt-ticker-and-usd1-million-seed-capital-for-bitcoin-etf",
+            "sentiment_score": 0.357304,
+            "sentiment_label": "Bullish",
+            "llm_reason": "新闻中提到摩根士丹利推出比特币ETF，这反映了华尔街主流金融机构对加密货币态度的转变以及其在主流投资中可及性的增加，是宏观金融市场趋势。"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "Alliant Energy Corp Aktie launches $1 billion equity program: Strategic move for utility expansion a",
+            "published": "20260320T050700",
+            "summary": "Alliant Energy Corporation has launched a $1 billion at-the-market stock distribution program to fund its expansion in renewable energy and grid upgrades due to increasing demand, particularly from data centers. This strategic move offers DACH investors exposure to stable U.S. utility yields with significant growth potential in the Midwest. The program provides financial flexibility for Alliant Energy's capital-intensive projects, supported by a healthy regulatory environment and strong growth drivers.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/alliant-energy-corp-aktie-launches-1-billion-equity-program-strategic/68923462",
+            "sentiment_score": 0.383615,
+            "sentiment_label": "Bullish",
+            "llm_reason": "新闻中提到公司启动股权计划是为了满足'数据中心日益增长的需求'，这反映了由技术进步驱动的宏观能源需求变化和基础设施投资趋势。"
         }
     ],
     "upcoming_economic_events": [
