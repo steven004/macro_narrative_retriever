@@ -13,33 +13,61 @@ RSS_FEEDS = {
     "WSJ_Markets": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
 }
 
-def fetch_macro_news(max_items_per_feed=8):
+MACRO_KEYWORDS = [
+    "Fed", "Powell", "Inflation", "CPI", "Rate", "Oil", "Crude", 
+    "Geopolitical", "ECB", "Unemployment", "Yield", "OPEC", 
+    "Recession", "Gold", "Dollar"
+]
+
+def fetch_macro_news(max_items_per_feed=15):
     """
-    Fetches the top news articles natively from standard financial RSS feeds.
-    Returns a list of structurally isolated dictionaries specifically optimized for LLM token ingestion securely.
+    Fetches top news articles from financial RSS feeds.
+    Filters out empty summaries and non-macro 'retail' noise.
     """
     news_narratives = []
+    
+    # Compile case-insensitive regex for whole word macro tracking
+    keyword_pattern = re.compile(r'\b(?:' + '|'.join(MACRO_KEYWORDS) + r')\b', re.IGNORECASE)
     
     for source, url in RSS_FEEDS.items():
         try:
             feed = feedparser.parse(url)
-            for i, entry in enumerate(feed.entries):
-                if i >= max_items_per_feed:
+            collected = 0
+            
+            for entry in feed.entries:
+                if collected >= max_items_per_feed:
                     break
                 
-                # Cleanup summary intelligently to absolutely eliminate raw HTML artifacts wasting LLM tokens organically
-                summary = entry.get("summary", "")
+                # Requirement A: Explicitly grab description or summary
+                summary = entry.get("description", entry.get("summary", ""))
+                
+                # Strip HTML artifacts
                 if "<" in summary and ">" in summary:
                     summary = re.sub('<[^<]+>', '', summary)
+                summary = summary.strip()
+                
+                title = entry.get("title", "").strip()
+                
+                # Discard if summary is empty to keep LLM context pristine
+                if not summary:
+                    continue
+                    
+                # Requirement B: Whitelist filter for macro topics
+                combined_text = f"{title} {summary}"
+                if not keyword_pattern.search(combined_text):
+                    continue
                     
                 news_narratives.append({
                     "source": source,
-                    "title": entry.get("title", ""),
+                    "title": title,
                     "published": entry.get("published", ""),
-                    "summary": summary.strip(),
+                    "summary": summary,
                     "link": entry.get("link", "")
                 })
+                
+                collected += 1
+                
         except Exception as e:
-            print(f"Error rapidly fetching from {source}: {e}")
+            print(f"Error fetching from {source}: {e}")
             
     return news_narratives
