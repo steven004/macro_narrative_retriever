@@ -1,6 +1,6 @@
 {
     "snapshot_date": "2026-03-20",
-    "total_news_items": 8,
+    "total_news_items": 1,
     "total_calendar_events": 11,
     "news_narratives": [
         {
@@ -11,85 +11,8 @@
             "link": "https://www.fticonsulting.com/insights/articles/how-war-iran-reshaping-transportation-logistics",
             "sentiment_score": 0.166195,
             "sentiment_label": "Somewhat-Bullish",
-            "llm_reason": "伊朗冲突导致全球供应链震荡、燃料价格上涨和重要航运路线受阻，是重大的地缘政治和宏观经济事件。",
+            "llm_reason": "新闻主语是关于伊朗冲突及其对全球运输、物流、燃料价格和霍尔木兹海峡的全局性影响，属于重大地缘政治和全球大宗商品影响。",
             "importance_score": 9
-        },
-        {
-            "source": "Simply Wall Street",
-            "title": "Assessing NextDecade (NEXT) Valuation After Ras Laffan LNG Supply Shock",
-            "published": "20260320T074004",
-            "summary": "Missile attacks on Qatar's Ras Laffan LNG hub have shifted investor focus to US LNG exporters like NextDecade (NEXT), which has seen significant recent share price momentum. Despite this, Simply Wall St assesses NEXT, currently trading at $7.28, as overvalued with a fair value of $6.00, citing its loss-making status and the contingent nature of its future growth on long-dated LNG contracts. The analysis suggests caution, while acknowledging that strong execution on core projects could challenge this bearish outlook.",
-            "link": "https://simplywall.st/stocks/us/energy/nasdaq-next/nextdecade/news/assessing-nextdecade-next-valuation-after-ras-laffan-lng-sup",
-            "sentiment_score": 0.105856,
-            "sentiment_label": "Neutral",
-            "llm_reason": "中东地缘政治事件（导弹袭击LNG枢纽）引发的全球液化天然气供应冲击，具有宏观影响。",
-            "importance_score": 7
-        },
-        {
-            "source": "Insider Monkey",
-            "title": "Raymond James Sees Attractive Outlook for Energy Transfer (ET), Adds to Favorites",
-            "published": "20260320T043855",
-            "summary": "Raymond James has added Energy Transfer LP (NYSE:ET) to its Analyst Current Favorites list, citing a very attractive relative outlook. The company's role in supporting data center infrastructure through agreements with Oracle and CloudBurst, along with its potential to benefit from growth in the U.S. LNG market following Qatar's production shutdown, are key factors driving increased investor attention. Energy Transfer operates a large and diversified energy asset portfolio across 44 states.",
-            "link": "https://www.insidermonkey.com/blog/raymond-james-sees-attractive-outlook-for-energy-transfer-et-adds-to-favorites-1720901/",
-            "sentiment_score": 0.392012,
-            "sentiment_label": "Bullish",
-            "llm_reason": "提及卡塔尔液化天然气生产中断这一宏观事件对美国液化天然气市场及能源公司产生影响。",
-            "importance_score": 7
-        },
-        {
-            "source": "Insider Monkey",
-            "title": "RBC Capital Trims PPG Target as Macro Uncertainty Persists",
-            "published": "20260320T043823",
-            "summary": "RBC Capital has lowered its price target for PPG Industries, Inc. (NYSE:PPG) to $114 from $115, maintaining a Sector Perform rating due to uneven demand in industrial markets and potential headwinds from the Iran conflict. Despite this, PPG is advancing its powder coatings business, including a new collaboration to commercialize laser curing systems aimed at reducing costs and environmental impact while improving production efficiency. The company manufactures and distributes paints, coatings, and specialty products globally.",
-            "link": "https://www.insidermonkey.com/blog/rbc-capital-trims-ppg-target-as-macro-uncertainty-persists-1720895/",
-            "sentiment_score": 0.025379,
-            "sentiment_label": "Neutral",
-            "llm_reason": "明确提及宏观不确定性及伊朗冲突对工业市场需求和公司业绩的潜在影响。",
-            "importance_score": 7
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "KeyCorp Aktie: Regional Bank Faces Interest Rate Pressures Amid Economic Shifts",
-            "published": "20260320T042648",
-            "summary": "KeyCorp, a Cleveland-based regional lender, is navigating a challenging environment due to shifting interest rates and deposit competition. The bank faces pressure on net interest margins as funding costs rise and deposit growth slows, even as its CET1 capital ratio remains solid. German investors are closely watching KeyCorp as a key indicator for the US banking sector, considering its dividend yield and exposure to regional growth.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/keycorp-aktie-regional-bank-faces-interest-rate-pressures-amid-economic/68923183",
-            "sentiment_score": -0.171405,
-            "sentiment_label": "Somewhat-Bearish",
-            "llm_reason": "讨论利率变动对区域银行部门的影响，并将其视为美国银行业指标，具有宏观意义。",
-            "importance_score": 7
-        },
-        {
-            "source": "Yahoo Finance UK",
-            "title": "RBC Capital Trims PPG Target as Macro Uncertainty Persists",
-            "published": "20260320T042205",
-            "summary": "RBC Capital has slightly lowered its price target for PPG Industries, Inc. to $114 from $115, maintaining a \"Sector Perform\" rating due to uneven demand in industrial markets and potential impacts from the Iran conflict. Despite this, PPG is actively expanding its powder coatings business and collaborating with IPG Photonics and Whirlpool on laser curing systems to reduce costs and environmental impact, showcasing ongoing innovation amidst macroeconomic uncertainties. The article also suggests that while PPG has potential, certain AI stocks might offer greater upside and less downside risk.",
-            "link": "https://uk.finance.yahoo.com/news/rbc-capital-trims-ppg-target-042248448.html",
-            "sentiment_score": 0.002004,
-            "sentiment_label": "Neutral",
-            "llm_reason": "明确提及宏观不确定性及伊朗冲突对工业市场需求和公司业绩的潜在影响。",
-            "importance_score": 7
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "The Procter & Gamble Company stock drops sharply on NYSE amid consumer slowdown signals testing defe",
-            "published": "20260320T051320",
-            "summary": "The Procter & Gamble Company's stock dropped over 3% on the NYSE due to weakening consumer demand in core categories. This decline, influenced by slowing sales growth and increasing consumer caution in both the U.S. and Europe, particularly affects DACH portfolios invested in defensive staples. Analysts note concerns about consumers trading down to private labels, challenging P&G's premium brand positioning and pricing power.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-procter-and-gamble-company-stock-drops-sharply-on-nyse-amid-consumer/68923497",
-            "sentiment_score": -0.241449,
-            "sentiment_label": "Somewhat-Bearish",
-            "llm_reason": "提及美国和欧洲消费需求放缓，对消费品公司产生影响，是宏观经济信号。",
-            "importance_score": 6
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "Smucker's Iconic Jams Face Supply Chain Pressures Amid 2026 Coffee and Fruit Cost Surge",
-            "published": "20260320T043126",
-            "summary": "J.M. Smucker's iconic jam brands, including strawberry and grape varieties, are facing challenges in early 2026 due to a significant surge in input costs for fruit purees and sugar, impacting profit margins. Despite these pressures, the company's diversified portfolio, particularly its coffee and pet food segments, provides stability, while strong brand loyalty and strategic promotions help maintain market share for its jams. The article also highlights the stock's defensive appeal for investors, especially in volatile markets.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/smucker-s-iconic-jams-face-supply-chain-pressures-amid-2026-coffee-and/68923225",
-            "sentiment_score": -0.099974,
-            "sentiment_label": "Neutral",
-            "llm_reason": "提及水果和糖等大宗商品成本飙升，对消费品公司利润率造成压力，是宏观因素。",
-            "importance_score": 6
         }
     ],
     "upcoming_economic_events": [
