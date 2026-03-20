@@ -1,5 +1,6 @@
 import feedparser
-from datetime import datetime
+import time
+import calendar
 import re
 import ssl
 
@@ -19,15 +20,18 @@ MACRO_KEYWORDS = [
     "Recession", "Gold", "Dollar"
 ]
 
+MAX_AGE_SECONDS = 72 * 3600  # 72 hours window limit
+
 def fetch_macro_news(max_items_per_feed=15):
     """
     Fetches top news articles from financial RSS feeds.
-    Filters out empty summaries and non-macro 'retail' noise.
+    Strictly filters out >72hr old narratives, empty summaries, and non-macro 'retail' noise.
     """
     news_narratives = []
     
     # Compile case-insensitive regex for whole word macro tracking
     keyword_pattern = re.compile(r'\b(?:' + '|'.join(MACRO_KEYWORDS) + r')\b', re.IGNORECASE)
+    current_time_utc = time.time()
     
     for source, url in RSS_FEEDS.items():
         try:
@@ -37,6 +41,16 @@ def fetch_macro_news(max_items_per_feed=15):
             for entry in feed.entries:
                 if collected >= max_items_per_feed:
                     break
+                    
+                # Time-Window Filter: Discard old news rigorously using perfectly parsed UTC timestamps
+                if not hasattr(entry, 'published_parsed') or entry.published_parsed is None:
+                    continue  # Discard if missing parsable publish date
+                    
+                article_time_utc = calendar.timegm(entry.published_parsed)
+                age_seconds = current_time_utc - article_time_utc
+                
+                if age_seconds > MAX_AGE_SECONDS:
+                    continue  # Discard specifically if strictly older than 72 hours
                 
                 # Requirement A: Explicitly grab description or summary
                 summary = entry.get("description", entry.get("summary", ""))
