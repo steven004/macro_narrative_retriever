@@ -1,35 +1,63 @@
 {
     "snapshot_date": "2026-03-20",
-    "total_news_items": 4,
+    "total_news_items": 8,
     "total_calendar_events": 11,
     "news_narratives": [
         {
-            "source": "WSJ_Markets",
-            "title": "Comex Gold, Silver Settle Lower",
-            "published": "Mon, 27 Jan 2025 14:01:00 -0500",
-            "summary": "Gold settled 1.4% lower, down two of the past three sessions, and silver fell 2.5%, down three of the past four sessions.",
-            "link": "https://www.wsj.com/articles/gold-edges-lower-feds-rate-decision-in-focus-09dbfceb?mod=rss_markets_main"
+            "source": "FT_Macro",
+            "title": "Gilts sell off after Bank of England warns of inflation risks",
+            "published": "Thu, 19 Mar 2026 19:01:42 GMT",
+            "summary": "MPC holds rates at 3.75% as war in Middle East continues to push energy costs higher",
+            "link": "https://www.ft.com/content/c0a967b6-19d0-4e50-9a8e-8ae510d43d08"
         },
         {
-            "source": "WSJ_Markets",
-            "title": "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens",
-            "published": "Mon, 27 Jan 2025 09:55:00 -0500",
-            "summary": "The Yen and Swiss Franc were stronger against the dollar as investors sought safe havens after Chinese start-up DeepSeek’s new AI model hit U.S. tech stocks.",
-            "link": "https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main"
+            "source": "FT_Macro",
+            "title": "Trump administration says it is not considering oil export ban as prices surge",
+            "published": "Thu, 19 Mar 2026 16:25:58 GMT",
+            "summary": "Industry worries that ‘panic’ actions by the White House could backfire on plans to increase drilling",
+            "link": "https://www.ft.com/content/126efbff-251b-4a0f-8031-29864385d7fe"
         },
         {
-            "source": "WSJ_Markets",
-            "title": "U.S. Treasury Yields Fall But Direction for Long-End Yields Still Seen Upward",
-            "published": "Mon, 27 Jan 2025 05:02:00 -0500",
-            "summary": "The 10-year U.S. Treasury yield fell and ING said the the long end of the Treasury curve will continue trading at higher yields even as Trump hasn’t delivered anything to shock markets so far.",
-            "link": "https://www.wsj.com/articles/jgbs-consolidate-supported-by-u-s-treasurys-gains-7edccc7d?mod=rss_markets_main"
+            "source": "FT_Macro",
+            "title": "Inflation and interest rates tracker: see how your country compares",
+            "published": "Thu, 19 Mar 2026 15:33:22 GMT",
+            "summary": "Inflationary pressures are beginning to wane. Explore the latest data through interactive charts",
+            "link": "https://www.ft.com/content/088d3368-bb8b-4ff3-9df7-a7680d4d81b2"
         },
         {
-            "source": "WSJ_Markets",
-            "title": "Russia's Crude Exports Fairly Stable Despite U.S. Sanctions, Goldman Says",
-            "published": "Mon, 27 Jan 2025 04:46:00 -0500",
-            "summary": "Oil edged lower in early trade as Goldman Sachs said the latest round of U.S. sanctions against Russia haven’t had a significant impact on the country’s oil exports.",
-            "link": "https://www.wsj.com/articles/oil-futures-fall-after-trump-calls-for-tariffs-on-colombia-5b2a178c?mod=rss_markets_main"
+            "source": "FT_Macro",
+            "title": "ECB holds rates steady and highlights raised uncertainty",
+            "published": "Thu, 19 Mar 2026 13:35:09 GMT",
+            "summary": "Central bank is reserving judgment on whether it can look through the energy price shock",
+            "link": "https://www.ft.com/content/73792fce-2f2e-4b30-b4f9-71039173b94e"
+        },
+        {
+            "source": "FT_Macro",
+            "title": "Jay Powell warns Iran war is likely to drive up inflation",
+            "published": "Thu, 19 Mar 2026 13:00:07 GMT",
+            "summary": "Also in today’s newsletter, the US spy chief offers conflicting assessments about Iran’s nuclear programme",
+            "link": "https://www.ft.com/content/d7d45ead-393c-49e1-b30e-0e9e15bbf2c0"
+        },
+        {
+            "source": "FT_Macro",
+            "title": "BoE holds rates but hints increases not off the table",
+            "published": "Thu, 19 Mar 2026 12:32:04 GMT",
+            "summary": "MPC stresses its only objective is to ensure inflation remains at its target rate of 2%",
+            "link": "https://www.ft.com/content/c3afde65-1ed7-4ac5-b433-9579c40488b0"
+        },
+        {
+            "source": "FT_Macro",
+            "title": "UK unemployment rate held at post-pandemic high of 5.2% at start of the year",
+            "published": "Thu, 19 Mar 2026 10:16:23 GMT",
+            "summary": "Figure comes ahead of Bank of England decision on interest rates",
+            "link": "https://www.ft.com/content/e9979ae7-3176-4449-a704-ade5026fe1c4"
+        },
+        {
+            "source": "FT_Macro",
+            "title": "BoJ holds rates and signals risks to growth and inflation from Iran war",
+            "published": "Thu, 19 Mar 2026 09:18:47 GMT",
+            "summary": "Limited new information was made available on when the central bank might move next",
+            "link": "https://www.ft.com/content/4c4b4eb9-0cb3-4044-9a24-71cb6e9e753d"
         }
     ],
     "upcoming_economic_events": [
