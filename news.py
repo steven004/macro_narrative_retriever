@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 MACRO_KEYWORDS = [
     # 1. Central Banks & Liquidity
     "Fed", "Powell", "FOMC", "ECB", "Lagarde", "BOJ", "PBOC", 
-    "Interest Rate", "Yield", "Treasury", "Liquidity", "Stimulus", "Rate Cut", "Rate Hike", "Bonds",
+    "Interest Rate", "Bond Yield", "Treasury Yield", "Treasury", "Liquidity", "Stimulus", "Rate Cut", "Rate Hike", "Bonds",
 
     # 2. Inflation & Economic Indicators
     "Inflation", "CPI", "PPI", "PCE", "Deflation", "Stagflation", 
@@ -21,7 +21,12 @@ MACRO_KEYWORDS = [
     "Geopolitical", "War", "Middle East", "Tariffs", "Sanctions", "Crisis", "Supply Chain",
 
     # 5. Portfolio Specific Anchors
-    "Gold", "Dollar", "USD", "Bitcoin", "Crypto", "Housing Market", "Real Estate"
+    "Gold", "US Dollar", "DXY", "USD", "Bitcoin", "Crypto", "Housing Market", "Real Estate"
+]
+
+MICRO_BLACKLIST = [
+    "Dividend", "Shares", "Bancorp", "Inc.", "Corp.", "Quarterly Earnings", 
+    "Analyst Estimates", "Zacks", "Buy Rating", "Sell Rating", "Stake", "Position in"
 ]
 
 MAX_AGE_SECONDS = 72 * 3600  # 72 hours window limit
@@ -40,7 +45,7 @@ def get_api_key():
 def fetch_macro_news(max_items=15):
     """
     Fetches structured news articles from Alpha Vantage REST API.
-    Strictly filters out >72hr old narratives, empty summaries, and retail noise.
+    Strictly filters out >72hr old narratives, micro-stock noise using a black/whitelist cascade.
     """
     api_key = get_api_key()
     if not api_key:
@@ -50,7 +55,9 @@ def fetch_macro_news(max_items=15):
     url = f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&topics=economy_macro&limit=50&apikey={api_key}"
     news_narratives = []
     
-    keyword_pattern = re.compile(r'\b(?:' + '|'.join(MACRO_KEYWORDS) + r')\b', re.IGNORECASE)
+    macro_pattern = re.compile(r'\b(?:' + '|'.join(MACRO_KEYWORDS) + r')\b', re.IGNORECASE)
+    blacklist_pattern = re.compile(r'\b(?:' + '|'.join(map(re.escape, MICRO_BLACKLIST)) + r')\b', re.IGNORECASE)
+    ticker_pattern = re.compile(r'\$[A-Z]{1,4}\b')
     current_time_utc = datetime.now(timezone.utc)
     
     try:
@@ -63,7 +70,6 @@ def fetch_macro_news(max_items=15):
             
         data = response.json()
         
-        # Check explicitly for free tier rate limit constraints natively and dynamically
         if "Information" in data and "rate limit" in data["Information"].lower():
             print("\033[91m[Alpha_Vantage] API Rate Limit Exceeded.\033[0m\n")
             return []
@@ -73,6 +79,7 @@ def fetch_macro_news(max_items=15):
         raw_count = len(feed)
         dropped_time = 0
         dropped_keyword = 0
+        dropped_blacklist = 0
         dropped_empty = 0
         collected = 0
         
@@ -89,7 +96,6 @@ def fetch_macro_news(max_items=15):
                 continue
                 
             try:
-                # Alpha Vantage Format: YYYYMMDDTHHMMSS seamlessly parsing structurally correctly
                 article_dt = datetime.strptime(pub_time_str, "%Y%m%dT%H%M%S")
                 article_dt = article_dt.replace(tzinfo=timezone.utc)
                 age_seconds = (current_time_utc - article_dt).total_seconds()
@@ -102,11 +108,17 @@ def fetch_macro_news(max_items=15):
                 continue
                 
             combined_text = f"{title} {summary}"
-            if not keyword_pattern.search(combined_text):
+            
+            # Phase 1: Micro-Stock Blacklist & Ticker Filter
+            if blacklist_pattern.search(combined_text) or ticker_pattern.search(title):
+                dropped_blacklist += 1
+                continue
+                
+            # Phase 2: Macro Whitelist Filter
+            if not macro_pattern.search(combined_text):
                 dropped_keyword += 1
                 continue
                 
-            # Extract internal Alpha Vantage sentiment analytics naturally explicitly properly.
             news_narratives.append({
                 "source": item.get("source", "AlphaVantage"),
                 "title": title,
@@ -118,7 +130,7 @@ def fetch_macro_news(max_items=15):
             })
             collected += 1
             
-        print(f"[Alpha_Vantage] Raw parsed REST API: {raw_count} | Dropped (Age > 72h): {dropped_time} | Dropped (No Keyword): {dropped_keyword} | Dropped (Empty/Format): {dropped_empty} | Kept: {collected}\n")
+        print(f"[Alpha_Vantage] Raw parsed REST API: {raw_count} | Dropped (Age > 72h): {dropped_time} | Dropped (Blacklist): {dropped_blacklist} | Dropped (No Keyword): {dropped_keyword} | Dropped (Empty/Format): {dropped_empty} | Kept: {collected}\n")
         
     except Exception as e:
         print(f"\033[91mError explicitly fetching from REST JSON API: {e}\033[0m\n")
