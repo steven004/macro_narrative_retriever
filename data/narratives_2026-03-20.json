@@ -4,14 +4,15 @@
     "total_calendar_events": 11,
     "news_narratives": [
         {
-            "source": "MarketBeat",
-            "title": "CIBC Bancorp USA Inc. Takes $16.16 Million Position in Lockheed Martin Corporation $LMT",
-            "published": "20260320T075205",
-            "summary": "CIBC Bancorp USA Inc. acquired a new stake of 32,376 shares, valued at approximately $16.16 million, in Lockheed Martin Corporation during the third quarter. This move is part of broader institutional investor activity, with several other hedge funds also adjusting their positions in the aerospace company. The article also highlights recent positive sentiment for Lockheed Martin due to potential increases in Pentagon spending related to geopolitical conflicts, analyst target raises, and new strategic contracts, alongside an acknowledgment of some program-level execution risks.",
-            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-1616-million-position-in-lockheed-martin-corporation-lmt-2026-03-20/",
-            "sentiment_score": 0.436018,
-            "sentiment_label": "Bullish",
-            "llm_reason": "新闻中提到'与地缘政治冲突相关的五角大楼支出可能增加'，这是一个宏观经济和地缘政治因素，影响整个国防工业领域。"
+            "source": "FTI Consulting",
+            "title": "How the War on Iran Is Reshaping Transportation & Logistics",
+            "published": "20260320T050918",
+            "summary": "The conflict involving Iran has caused a significant supply chain shock, impacting fuel prices, ocean and air freight rates, and closing the Strait of Hormuz. Shippers are facing increased costs and disruptions, prompting a reevaluation of tactical responses and long-term strategic positioning within the transportation and logistics industry. The article explores whether this is a temporary setback or the beginning of a structural shift, urging companies to stress-test their supply chain resilience.",
+            "link": "https://www.fticonsulting.com/insights/articles/how-war-iran-reshaping-transportation-logistics",
+            "sentiment_score": 0.166195,
+            "sentiment_label": "Somewhat-Bullish",
+            "llm_reason": "伊朗冲突导致全球供应链震荡、燃料价格上涨和重要航运路线受阻，是重大的地缘政治和宏观经济事件。",
+            "importance_score": 9
         },
         {
             "source": "Simply Wall Street",
@@ -21,27 +22,52 @@
             "link": "https://simplywall.st/stocks/us/energy/nasdaq-next/nextdecade/news/assessing-nextdecade-next-valuation-after-ras-laffan-lng-sup",
             "sentiment_score": 0.105856,
             "sentiment_label": "Neutral",
-            "llm_reason": "新闻提到'对卡塔尔拉斯拉凡液化天然气枢纽的导弹袭击'，这是一个地缘政治事件导致的全球大宗商品供应冲击，影响整个液化天然气市场。"
+            "llm_reason": "中东地缘政治事件（导弹袭击LNG枢纽）引发的全球液化天然气供应冲击，具有宏观影响。",
+            "importance_score": 7
         },
         {
-            "source": "Investing.com",
-            "title": "JPMorgan upgrades Air Products stock rating on helium recovery",
-            "published": "20260320T072404",
-            "summary": "JPMorgan upgraded Air Products & Chemicals Inc. (NYSE:APD) from Neutral to Overweight, raising its price target to $310 due to the company's stability in an uncertain economic environment and the recovery in helium prices. The firm anticipates accelerated volumes for Air Products, driven by higher utilization rates in North American chemical and refinery sectors, and notes the company's consistent dividend payments for 56 years. This upgrade follows strong Q1 2026 financial results which exceeded analyst expectations.",
-            "link": "https://www.investing.com/news/analyst-ratings/jpmorgan-upgrades-air-products-stock-rating-on-helium-recovery-93CH-4572347",
-            "sentiment_score": 0.269547,
-            "sentiment_label": "Somewhat-Bullish",
-            "llm_reason": "新闻中提到'氦气价格回升'和'不确定的经济环境'，涉及大宗商品价格趋势和宏观经济环境，影响整个行业前景。"
+            "source": "Insider Monkey",
+            "title": "Raymond James Sees Attractive Outlook for Energy Transfer (ET), Adds to Favorites",
+            "published": "20260320T043855",
+            "summary": "Raymond James has added Energy Transfer LP (NYSE:ET) to its Analyst Current Favorites list, citing a very attractive relative outlook. The company's role in supporting data center infrastructure through agreements with Oracle and CloudBurst, along with its potential to benefit from growth in the U.S. LNG market following Qatar's production shutdown, are key factors driving increased investor attention. Energy Transfer operates a large and diversified energy asset portfolio across 44 states.",
+            "link": "https://www.insidermonkey.com/blog/raymond-james-sees-attractive-outlook-for-energy-transfer-et-adds-to-favorites-1720901/",
+            "sentiment_score": 0.392012,
+            "sentiment_label": "Bullish",
+            "llm_reason": "提及卡塔尔液化天然气生产中断这一宏观事件对美国液化天然气市场及能源公司产生影响。",
+            "importance_score": 7
+        },
+        {
+            "source": "Insider Monkey",
+            "title": "RBC Capital Trims PPG Target as Macro Uncertainty Persists",
+            "published": "20260320T043823",
+            "summary": "RBC Capital has lowered its price target for PPG Industries, Inc. (NYSE:PPG) to $114 from $115, maintaining a Sector Perform rating due to uneven demand in industrial markets and potential headwinds from the Iran conflict. Despite this, PPG is advancing its powder coatings business, including a new collaboration to commercialize laser curing systems aimed at reducing costs and environmental impact while improving production efficiency. The company manufactures and distributes paints, coatings, and specialty products globally.",
+            "link": "https://www.insidermonkey.com/blog/rbc-capital-trims-ppg-target-as-macro-uncertainty-persists-1720895/",
+            "sentiment_score": 0.025379,
+            "sentiment_label": "Neutral",
+            "llm_reason": "明确提及宏观不确定性及伊朗冲突对工业市场需求和公司业绩的潜在影响。",
+            "importance_score": 7
         },
         {
             "source": "AD HOC NEWS",
-            "title": "InterContinental Hotels Group PLC Aktie: Strong 2025 Results Drive Momentum into 2026 Amid Global Travel Recovery",
-            "published": "20260320T054023",
-            "summary": "InterContinental Hotels Group PLC reported robust full-year 2025 results, demonstrating strong revenue growth, expanded system size, and over $1.1 billion returned to shareholders. The company's asset-light franchising model and diverse brand portfolio position it for continued growth amid global travel recovery, appealing to DACH investors with its predictable cash flows and shareholder-centric capital allocation. Despite potential risks like economic slowdowns and geopolitical tensions, the firm's strategic focus and strong market fundamentals are expected to drive sustained momentum into 2026.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/intercontinental-hotels-group-plc-aktie-strong-2025-results-drive/68923568",
-            "sentiment_score": -0.069465,
+            "title": "KeyCorp Aktie: Regional Bank Faces Interest Rate Pressures Amid Economic Shifts",
+            "published": "20260320T042648",
+            "summary": "KeyCorp, a Cleveland-based regional lender, is navigating a challenging environment due to shifting interest rates and deposit competition. The bank faces pressure on net interest margins as funding costs rise and deposit growth slows, even as its CET1 capital ratio remains solid. German investors are closely watching KeyCorp as a key indicator for the US banking sector, considering its dividend yield and exposure to regional growth.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/keycorp-aktie-regional-bank-faces-interest-rate-pressures-amid-economic/68923183",
+            "sentiment_score": -0.171405,
+            "sentiment_label": "Somewhat-Bearish",
+            "llm_reason": "讨论利率变动对区域银行部门的影响，并将其视为美国银行业指标，具有宏观意义。",
+            "importance_score": 7
+        },
+        {
+            "source": "Yahoo Finance UK",
+            "title": "RBC Capital Trims PPG Target as Macro Uncertainty Persists",
+            "published": "20260320T042205",
+            "summary": "RBC Capital has slightly lowered its price target for PPG Industries, Inc. to $114 from $115, maintaining a \"Sector Perform\" rating due to uneven demand in industrial markets and potential impacts from the Iran conflict. Despite this, PPG is actively expanding its powder coatings business and collaborating with IPG Photonics and Whirlpool on laser curing systems to reduce costs and environmental impact, showcasing ongoing innovation amidst macroeconomic uncertainties. The article also suggests that while PPG has potential, certain AI stocks might offer greater upside and less downside risk.",
+            "link": "https://uk.finance.yahoo.com/news/rbc-capital-trims-ppg-target-042248448.html",
+            "sentiment_score": 0.002004,
             "sentiment_label": "Neutral",
-            "llm_reason": "新闻中提到'全球旅游业复苏'，这是一个重要的宏观经济趋势，影响整个旅游和酒店行业。"
+            "llm_reason": "明确提及宏观不确定性及伊朗冲突对工业市场需求和公司业绩的潜在影响。",
+            "importance_score": 7
         },
         {
             "source": "AD HOC NEWS",
@@ -51,37 +77,19 @@
             "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-procter-and-gamble-company-stock-drops-sharply-on-nyse-amid-consumer/68923497",
             "sentiment_score": -0.241449,
             "sentiment_label": "Somewhat-Bearish",
-            "llm_reason": "新闻中提到'消费者需求减弱'、'销售增长放缓'和'消费者谨慎情绪增加'，这些是衡量宏观经济健康状况的关键指标，影响整个消费品行业。"
-        },
-        {
-            "source": "FTI Consulting",
-            "title": "How the War on Iran Is Reshaping Transportation & Logistics",
-            "published": "20260320T050918",
-            "summary": "The conflict involving Iran has caused a significant supply chain shock, impacting fuel prices, ocean and air freight rates, and closing the Strait of Hormuz. Shippers are facing increased costs and disruptions, prompting a reevaluation of tactical responses and long-term strategic positioning within the transportation and logistics industry. The article explores whether this is a temporary setback or the beginning of a structural shift, urging companies to stress-test their supply chain resilience.",
-            "link": "https://www.fticonsulting.com/insights/articles/how-war-iran-reshaping-transportation-logistics",
-            "sentiment_score": 0.166195,
-            "sentiment_label": "Somewhat-Bullish",
-            "llm_reason": "新闻标题直接指出'伊朗战争如何重塑运输和物流'，详细讨论地缘政治冲突对全球供应链、燃料价格、运费和关键航道的影响，是纯正的宏观经济新闻。"
-        },
-        {
-            "source": "CoinDesk",
-            "title": "Morgan Stanley sets MSBT ticker and $1 million seed capital for bitcoin ETF",
-            "published": "20260320T050807",
-            "summary": "Morgan Stanley has filed with the SEC to launch a spot Bitcoin ETF under the ticker MSBT, allocating a $1 million seed investment for its debut. This move highlights Wall Street's increasing interest in making crypto accessible to mainstream investors. If approved, the ETF would allow investors to gain Bitcoin exposure without directly owning the asset, joining other successful spot ETFs.",
-            "link": "https://www.coindesk.com/markets/2026/03/20/morgan-stanley-sets-msbt-ticker-and-usd1-million-seed-capital-for-bitcoin-etf",
-            "sentiment_score": 0.357304,
-            "sentiment_label": "Bullish",
-            "llm_reason": "新闻中提到摩根士丹利推出比特币ETF，这反映了华尔街主流金融机构对加密货币态度的转变以及其在主流投资中可及性的增加，是宏观金融市场趋势。"
+            "llm_reason": "提及美国和欧洲消费需求放缓，对消费品公司产生影响，是宏观经济信号。",
+            "importance_score": 6
         },
         {
             "source": "AD HOC NEWS",
-            "title": "Alliant Energy Corp Aktie launches $1 billion equity program: Strategic move for utility expansion a",
-            "published": "20260320T050700",
-            "summary": "Alliant Energy Corporation has launched a $1 billion at-the-market stock distribution program to fund its expansion in renewable energy and grid upgrades due to increasing demand, particularly from data centers. This strategic move offers DACH investors exposure to stable U.S. utility yields with significant growth potential in the Midwest. The program provides financial flexibility for Alliant Energy's capital-intensive projects, supported by a healthy regulatory environment and strong growth drivers.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/alliant-energy-corp-aktie-launches-1-billion-equity-program-strategic/68923462",
-            "sentiment_score": 0.383615,
-            "sentiment_label": "Bullish",
-            "llm_reason": "新闻中提到公司启动股权计划是为了满足'数据中心日益增长的需求'，这反映了由技术进步驱动的宏观能源需求变化和基础设施投资趋势。"
+            "title": "Smucker's Iconic Jams Face Supply Chain Pressures Amid 2026 Coffee and Fruit Cost Surge",
+            "published": "20260320T043126",
+            "summary": "J.M. Smucker's iconic jam brands, including strawberry and grape varieties, are facing challenges in early 2026 due to a significant surge in input costs for fruit purees and sugar, impacting profit margins. Despite these pressures, the company's diversified portfolio, particularly its coffee and pet food segments, provides stability, while strong brand loyalty and strategic promotions help maintain market share for its jams. The article also highlights the stock's defensive appeal for investors, especially in volatile markets.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/smucker-s-iconic-jams-face-supply-chain-pressures-amid-2026-coffee-and/68923225",
+            "sentiment_score": -0.099974,
+            "sentiment_label": "Neutral",
+            "llm_reason": "提及水果和糖等大宗商品成本飙升，对消费品公司利润率造成压力，是宏观因素。",
+            "importance_score": 6
         }
     ],
     "upcoming_economic_events": [

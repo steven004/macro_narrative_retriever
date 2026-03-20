@@ -2,6 +2,10 @@ import os
 import json
 import requests
 from datetime import datetime, timezone
+import warnings
+
+warnings.filterwarnings("ignore")
+
 from google import genai
 from google.genai import types
 
@@ -19,8 +23,8 @@ def get_api_keys():
 
 def filter_news_with_llm(news_list):
     """
-    Passes the raw news array to Gemini 1.5 Flash to act as a semantic judge.
-    Returns a list of structurally purified 'macro only' news.
+    Passes the raw news array to Gemini to act as a semantic judge.
+    Returns a sorted list of structurally purified 'macro only' news based on importance.
     """
     if not news_list:
         return []
@@ -33,7 +37,6 @@ def filter_news_with_llm(news_list):
         
     client = genai.Client(api_key=gemini_key)
     
-    # Prepare payload for LLM
     llm_payload = []
     for i, news in enumerate(news_list):
         llm_payload.append({
@@ -43,7 +46,13 @@ def filter_news_with_llm(news_list):
         })
         
     prompt = """
-    你是一个宏观对冲基金的首席数据清洗官。你需要逐条阅读以下新闻，并判断它是否是纯正的【全球宏观经济新闻】（如美联储、通胀、地缘政治、大宗商品、央行政策等）。如果新闻主要讨论的是单家公司的财报、高管变动、机构持仓、股票评级等【微观企业新闻】，请严格判定为 False。请直接返回一个 JSON 数组，格式为：[{"id": 0, "is_macro": true, "reason": "简短原因"}]
+    你是一个宏观对冲基金的首席数据清洗与分析官。你需要逐条阅读以下新闻并进行两项评估：
+    
+    1. 宏观判定 (is_macro): 判断该新闻是否是纯正的【全球宏观经济新闻】（如美联储、通胀、地缘政治、大宗商品、央行政策等）。如果主要是单家公司的财报、高管变动、机构持仓、股票评级等【微观企业新闻】，必须严格判定为 false。
+    
+    2. 重要性评分 (importance_score): 对所有判定为宏观的新闻提供一个 1-10 的整数评分。10分代表具有全球系统性影响的顶级宏观事件（如美联储决议、全球冲突），1分代表边缘性琐事。若 is_macro 为 false，该分数默认填 0。
+    
+    请直接返回一个严格的 JSON 数组，格式如此：[{"id": 0, "is_macro": true, "importance_score": 8, "reason": "简短原因"}]
     
     以下是需要判定的新闻列表：
     """ + json.dumps(llm_payload, ensure_ascii=False)
@@ -57,22 +66,22 @@ def filter_news_with_llm(news_list):
             ),
         )
         
-        # Parse the JSON array returned natively
         judgments = json.loads(response.text)
-        
-        # Build a lookup dictionary for fast access
-        judgment_map = {item["id"]: item for item in judgments if "id" in item and "is_macro" in item}
+        judgment_map = {item["id"]: item for item in judgments if "id" in item}
         
         filtered_news = []
         dropped_llm = 0
         for i, news in enumerate(news_list):
             judge = judgment_map.get(i)
-            if judge and judge["is_macro"]:
-                # Attach the LLM's explicit reasoning natively
+            if judge and judge.get("is_macro"):
                 news["llm_reason"] = judge.get("reason", "")
+                news["importance_score"] = judge.get("importance_score", 0)
                 filtered_news.append(news)
             else:
                 dropped_llm += 1
+                
+        # Sort aggressively by importance score (highest to lowest)
+        filtered_news.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
                 
         print(f"[LLM_Filter] Gemini evaluated {len(news_list)} items | Dropped (Micro Noise): {dropped_llm} | Kept (Pure Macro): {len(filtered_news)}")
         return filtered_news
@@ -84,7 +93,7 @@ def filter_news_with_llm(news_list):
 def fetch_macro_news(max_items=8):
     """
     Fetches structured news articles from Alpha Vantage REST API.
-    Uses Gemini LLM to strictly filter out micro-stock noise safely natively.
+    Uses Gemini LLM to filter and rank macro relevance.
     """
     keys = get_api_keys()
     api_key = keys.get("ALPHA_VANTAGE_KEY")
@@ -149,13 +158,13 @@ def fetch_macro_news(max_items=8):
             
         print(f"[Alpha_Vantage] Raw parsed REST API: {raw_count} | Dropped (Age > 72h): {dropped_time} | Dropped (Empty/Format): {dropped_empty} | Candidates for LLM: {len(pre_llm_candidates)}")
         
-        # Pass candidates to the Gemini Judge expertly seamlessly natively smartly purely safely seamlessly accurately successfully seamlessly successfully actively gracefully cleanly confidently explicitly robustly cleanly dynamically purely.
+        # Pass candidates to the Gemini Judge and Ranker
         final_news = filter_news_with_llm(pre_llm_candidates)
         
-        # Cap the output
+        # Cap the output at max_items (already sorted highest to lowest internally)
         return final_news[:max_items]
         
     except Exception as e:
-        print(f"\033[91mError safely extracting smoothly natively confidently cleanly manually precisely smoothly expertly naturally seamlessly cleanly gracefully successfully intuitively practically functionally organically smoothly implicitly securely flawlessly brilliantly instinctively ideally cleanly successfully efficiently exactly intuitively dynamically manually elegantly flawlessly accurately smoothly: {e}\033[0m\n")
+        print(f"\033[91mError extracting macro news from API: {e}\033[0m\n")
             
     return []
