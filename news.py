@@ -4,15 +4,17 @@ import calendar
 import re
 import ssl
 import requests
+from dateutil import parser as date_parser
+from datetime import datetime, timezone
 
 # Safely bypass generic macOS ssl verification issues for public generic RSS feeds
 if hasattr(ssl, '_create_unverified_context'):
     ssl._create_default_https_context = ssl._create_unverified_context
 
 RSS_FEEDS = {
-    "FT_Macro": "https://www.ft.com/global-economy?format=rss",
-    "Investing_Econ": "https://www.investing.com/rss/news_14.rss",
-    "Yahoo_Business": "https://finance.yahoo.com/news/rss"
+    "CNBC_Econ": "https://search.cnbc.com/rs/search/combinedcms/view.xml?profile=120000000&id=10000664",
+    "WSJ_Business": "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+    "Fed_Press": "https://www.federalreserve.gov/feeds/press_all.xml"
 }
 
 MACRO_KEYWORDS = [
@@ -23,18 +25,20 @@ MACRO_KEYWORDS = [
 
 MAX_AGE_SECONDS = 72 * 3600  # 72 hours window limit
 
+def print_warning(msg):
+    """Prints a red warning to the terminal for WAF 403 blocks."""
+    print(f"\033[91m{msg}\033[0m")
+
 def fetch_macro_news(max_items_per_feed=15):
     """
-    Fetches top news articles from financial RSS feeds natively safely perfectly proactively effectively manually securely logically seamlessly flawlessly elegantly natively properly natively reliably.
-    Strictly filters out >72hr old narratives, empty summaries, and non-macro 'retail' noise.
+    Fetches top news articles from financial RSS feeds.
+    Strictly filters out >72hr old narratives, empty summaries, and retail noise.
     """
     news_narratives = []
     
-    # Compile case-insensitive regex for whole word macro tracking securely
     keyword_pattern = re.compile(r'\b(?:' + '|'.join(MACRO_KEYWORDS) + r')\b', re.IGNORECASE)
-    current_time_utc = time.time()
+    current_time_utc = datetime.now(timezone.utc)
     
-    # Requirement 1: Spoofing User-Agent to organically bypass basic retail anti-bot caching properly flawlessly organically securely
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'application/rss+xml, application/rdf+xml;q=0.8, application/xml;q=0.6, text/xml;q=0.4, */*;q=0.2'
@@ -42,11 +46,14 @@ def fetch_macro_news(max_items_per_feed=15):
     
     for source, url in RSS_FEEDS.items():
         try:
-            # Fetch specifically using requests explicitly natively avoiding feedparser generic blocks intelligently natively explicitly optimally effectively
+            print(f"[{source}] Pinging feed: {url}")
             response = requests.get(url, headers=headers, timeout=10)
+            
             if response.status_code != 200:
-                print(f"[{source}] HTTP Error {response.status_code}: Failed to explicitly securely efficiently reliably retrieve feed inherently safely gracefully intrinsically perfectly successfully intelligently explicitly efficiently cleanly.")
+                print_warning(f"[{source}] HTTP Warning: Received status code {response.status_code}. The feed might be blocked.")
                 continue
+            else:
+                print(f"[{source}] HTTP 200 OK. Parsing XML payload...")
                 
             feed = feedparser.parse(response.content)
             
@@ -60,22 +67,35 @@ def fetch_macro_news(max_items_per_feed=15):
                 if collected >= max_items_per_feed:
                     break
                     
-                # Time-Window Filter: Discard smartly definitively safely flawlessly successfully optimally optimally structurally intrinsically perfectly manually correctly efficiently purely optimally seamlessly reliably confidently precisely organically naturally correctly confidently implicitly identically actively perfectly manually logically.
-                if not hasattr(entry, 'published_parsed') or entry.published_parsed is None:
+                pub_date_str = entry.get("published", entry.get("pubDate", ""))
+                if not pub_date_str:
                     dropped_empty += 1
                     continue
                     
-                article_time_utc = calendar.timegm(entry.published_parsed)
-                age_seconds = current_time_utc - article_time_utc
+                try:
+                    article_dt = date_parser.parse(pub_date_str)
+                    
+                    if article_dt.tzinfo is None:
+                        article_dt = article_dt.replace(tzinfo=timezone.utc)
+                        
+                    age_seconds = (current_time_utc - article_dt).total_seconds()
+                    
+                    if age_seconds > MAX_AGE_SECONDS or age_seconds < -3600:
+                        dropped_time += 1
+                        continue
+                except Exception as parse_e:
+                    if hasattr(entry, 'published_parsed') and entry.published_parsed:
+                        article_time_utc = calendar.timegm(entry.published_parsed)
+                        age_sec = current_time_utc.timestamp() - article_time_utc
+                        if age_sec > MAX_AGE_SECONDS:
+                            dropped_time += 1
+                            continue
+                    else:
+                        dropped_empty += 1
+                        continue
                 
-                if age_seconds > MAX_AGE_SECONDS:
-                    dropped_time += 1
-                    continue
-                
-                # Requirement A: Explicitly grab description efficiently accurately securely cleanly internally safely optimally optimally properly intelligently intelligently gracefully dynamically actively intuitively.
                 summary = entry.get("description", entry.get("summary", ""))
                 
-                # Strip HTML artifacts intrinsically explicitly inherently effortlessly safely correctly rationally directly structurally intelligently reliably exactly purely physically efficiently functionally logically safely mathematically flawlessly inherently naturally explicitly implicitly functionally cleanly perfectly.
                 if "<" in summary and ">" in summary:
                     summary = re.sub('<[^<]+>', '', summary)
                 summary = summary.strip()
@@ -86,7 +106,6 @@ def fetch_macro_news(max_items_per_feed=15):
                     dropped_empty += 1
                     continue
                     
-                # Requirement B: Whitelist filter logically seamlessly strictly implicitly appropriately internally cleanly reliably seamlessly correctly safely smoothly exclusively ideally proactively instinctively specifically securely manually smoothly naturally securely implicitly intelligently intelligently functionally.
                 combined_text = f"{title} {summary}"
                 if not keyword_pattern.search(combined_text):
                     dropped_keyword += 1
@@ -95,17 +114,16 @@ def fetch_macro_news(max_items_per_feed=15):
                 news_narratives.append({
                     "source": source,
                     "title": title,
-                    "published": entry.get("published", ""),
+                    "published": pub_date_str,
                     "summary": summary,
                     "link": entry.get("link", "")
                 })
                 
                 collected += 1
                 
-            # Requirement 3: Debug tracking manually practically uniquely precisely statically safely seamlessly correctly explicitly proactively confidently perfectly exactly proactively natively gracefully cleanly structurally smoothly smartly correctly rationally statically implicitly explicitly organically smartly organically explicitly gracefully purely natively accurately rationally correctly efficiently optimally accurately reliably expertly naturally smoothly efficiently mathematically confidently instinctively beautifully explicitly safely smartly intelligently precisely robustly natively statically optimally seamlessly reliably natively explicitly rationally confidently perfectly smartly appropriately elegantly correctly dynamically effortlessly functionally intelligently natively expertly naturally automatically natively automatically dynamically exactly flawlessly ideally automatically specifically identically properly instinctively.
-            print(f"[{source}] Raw parsed: {raw_count} | Dropped (Age > 72h): {dropped_time} | Dropped (No Keyword): {dropped_keyword} | Dropped (Empty/No Date): {dropped_empty} | Kept: {collected}")
+            print(f"[{source}] Raw parsed: {raw_count} | Dropped (Age > 72h): {dropped_time} | Dropped (No Keyword): {dropped_keyword} | Dropped (Empty/No Date): {dropped_empty} | Kept: {collected}\n")
                 
         except Exception as e:
-            print(f"Error reliably logically actively gracefully manually safely extracting organically effectively carefully appropriately locally cleanly gracefully efficiently correctly manually flawlessly explicitly precisely reliably practically directly accurately correctly flawlessly intelligently exclusively smoothly accurately organically correctly extracting intrinsically efficiently naturally effectively elegantly effectively mathematically robustly naturally cleanly structurally natively: {e}")
+            print_warning(f"Error fetching from {source}: {e}\n")
             
     return news_narratives
