@@ -6,9 +6,22 @@ import re
 from datetime import datetime, timezone
 
 MACRO_KEYWORDS = [
-    "Fed", "Powell", "Inflation", "CPI", "Rate", "Oil", "Crude", 
-    "Geopolitical", "ECB", "Unemployment", "Yield", "OPEC", 
-    "Recession", "Gold", "Dollar"
+    # 1. Central Banks & Liquidity
+    "Fed", "Powell", "FOMC", "ECB", "Lagarde", "BOJ", "PBOC", 
+    "Interest Rate", "Yield", "Treasury", "Liquidity", "Stimulus", "Rate Cut", "Rate Hike", "Bonds",
+
+    # 2. Inflation & Economic Indicators
+    "Inflation", "CPI", "PPI", "PCE", "Deflation", "Stagflation", 
+    "Unemployment", "Nonfarm", "NFP", "Payrolls", "GDP", "PMI", "Recession", "Soft Landing",
+
+    # 3. Commodities & Energy Shock
+    "Oil", "Crude", "Brent", "OPEC", "Energy", "Gas", "Copper", "Commodities",
+
+    # 4. Geopolitics & Tail Risks
+    "Geopolitical", "War", "Middle East", "Tariffs", "Sanctions", "Crisis", "Supply Chain",
+
+    # 5. Portfolio Specific Anchors
+    "Gold", "Dollar", "USD", "Bitcoin", "Crypto", "Housing Market", "Real Estate"
 ]
 
 MAX_AGE_SECONDS = 72 * 3600  # 72 hours window limit

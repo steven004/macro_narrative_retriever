@@ -1,6 +1,6 @@
 {
     "snapshot_date": "2026-03-20",
-    "total_news_items": 15,
+    "total_news_items": 8,
     "total_calendar_events": 11,
     "news_narratives": [
         {
@@ -10,6 +10,15 @@
             "summary": "CIBC Bancorp USA Inc. has acquired a new position in Southern Company (The) (NYSE:SO) during the third quarter, purchasing 156,073 shares valued at approximately $14.79 million. This move is part of broader institutional interest in Southern Company, with other major investors like Vanguard Group Inc. and Capital World Investors also significantly holding or increasing their stakes. Despite an overall \"Hold\" rating from analysts and a consensus price target of $98.08, the company maintains a substantial market cap, a 3.1% dividend yield, and recently reported quarterly earnings that narrowly missed analyst estimates.",
             "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-1479-million-position-in-southern-company-the-so-2026-03-20/",
             "sentiment_score": 0.137311,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "MarketBeat",
+            "title": "CIBC Bancorp USA Inc. Invests $13.79 Million in Duke Energy Corporation $DUK",
+            "published": "20260320T075230",
+            "summary": "CIBC Bancorp USA Inc. recently acquired 111,430 shares of Duke Energy Corporation, valued at approximately $13.79 million. Despite this new institutional investment, analyst ratings are mixed with an average \"Hold\" rating and an average price target of $137.80. Insider selling has also been reported, with CEO Louis E. Renjel and SVP Regis T. Repko reducing their stakes.",
+            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-invests-1379-million-in-duke-energy-corporation-duk-2026-03-20/",
+            "sentiment_score": 0.073552,
             "sentiment_label": "Neutral"
         },
         {
@@ -40,15 +49,6 @@
             "sentiment_label": "Neutral"
         },
         {
-            "source": "Barchart",
-            "title": "Is Pool Corporation Stock Underperforming the S&P 500?",
-            "published": "20260320T070716",
-            "summary": "Pool Corporation (POOL), the world's largest wholesale distributor of swimming pool products, has significantly underperformed the S&P 500. Over the past year, POOL stock has dropped 36.6% while the S&P 500 gained 16.4%, and it continues a downtrend below key moving averages. Despite this, the company maintains consistent dividend payments, and Wall Street analysts currently rate it a \"Moderate Buy\" with an implied potential upside of over 30%.",
-            "link": "https://www.barchart.com/story/news/857321/is-pool-corporation-stock-underperforming-the-s-p-500",
-            "sentiment_score": -0.201586,
-            "sentiment_label": "Somewhat-Bearish"
-        },
-        {
             "source": "Construction Review",
             "title": "Woh Hup Awarded Multi-Billion-Dollar Main Contract for Las Vegas Sands' US$8 Billion Marina Bay Sands IR2 Expansion in Singapore",
             "published": "20260320T064158",
@@ -74,69 +74,6 @@
             "link": "https://sg.news.yahoo.com/woh-hup-build-las-vegas-052459208.html",
             "sentiment_score": 0.406121,
             "sentiment_label": "Bullish"
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "Pentair plc Aktie: Strong Earnings Momentum and 2026 Guidance Lift Outlook for Water Solutions Leade",
-            "published": "20260320T043406",
-            "summary": "Pentair plc (NYSE: PNR) has reported strong Q4 2025 earnings, beating analyst expectations, and provided an optimistic FY 2026 EPS guidance of $5.25-$5.40. This performance, driven by demand for water solutions in residential and industrial segments, positions the company for sustained growth. The stock offers a compelling blend of growth, income, and resilience, making it attractive to DACH investors despite potential risks like commodity inflation and housing market sensitivity.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/pentair-plc-aktie-strong-earnings-momentum-and-2026-guidance-lift-outlook/68923235",
-            "sentiment_score": 0.465813,
-            "sentiment_label": "Bullish"
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "KeyCorp Aktie: Regional Bank Faces Interest Rate Pressures Amid Economic Shifts",
-            "published": "20260320T042648",
-            "summary": "KeyCorp, a Cleveland-based regional lender, is navigating a challenging environment due to shifting interest rates and deposit competition. The bank faces pressure on net interest margins as funding costs rise and deposit growth slows, even as its CET1 capital ratio remains solid. German investors are closely watching KeyCorp as a key indicator for the US banking sector, considering its dividend yield and exposure to regional growth.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/keycorp-aktie-regional-bank-faces-interest-rate-pressures-amid-economic/68923183",
-            "sentiment_score": -0.145082,
-            "sentiment_label": "Neutral"
-        },
-        {
-            "source": "GuruFocus",
-            "title": "Decoding FedEx Corp (FDX): A Strategic SWOT Insight",
-            "published": "20260320T042634",
-            "summary": "This article provides a strategic SWOT analysis of FedEx Corp (FDX), highlighting its strengths in market leadership and financial robustness, alongside weaknesses like macroeconomic sensitivity and high operating costs. It identifies opportunities in digital expansion and global e-commerce, while also pointing out threats from changing global trade policies and geopolitical conflicts. The analysis is based on FedEx's recent 10-Q report, offering insights into the company's performance and strategic positioning.",
-            "link": "https://www.gurufocus.com/news/8728247/decoding-fedex-corp-fdx-a-strategic-swot-insight",
-            "sentiment_score": 0.028213,
-            "sentiment_label": "Neutral"
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "National Beverage Corp Aktie draws DACH investor attention amid sparkling water surge and stable ear",
-            "published": "20260320T041010",
-            "summary": "National Beverage Corp (ISIN: US6350171061) reported steady Q2 results with its LaCroix brand driving growth in the US health beverage market, sparking interest from German-speaking (DACH) investors. The company's shares rose on NASDAQ as consumer demand shifted toward low-calorie options, and its debt-free balance sheet and 5% dividend yield are appealing in uncertain economic times. Analysts project continued EPS growth, making it an attractive play for diversification and defensive qualities in DACH portfolios.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/national-beverage-corp-aktie-draws-dach-investor-attention-amid-sparkling/68923056",
-            "sentiment_score": 0.042182,
-            "sentiment_label": "Neutral"
-        },
-        {
-            "source": "AD HOC NEWS",
-            "title": "Salesforce, Inc. stock surges on AI-driven fiscal 2026 results and $50B buyback amid growth concerns",
-            "published": "20260320T040115",
-            "summary": "Salesforce reported strong fiscal 2026 results with $41.5 billion in revenue, driven significantly by its AI platform, Agentforce, which achieved an $800 million annual run rate. Despite initial concerns over fiscal year 2027 guidance, a massive $50 billion share repurchase program bolstered investor confidence, causing the stock to rebound. This blend of AI innovation and capital returns positions Salesforce as a compelling investment, particularly for DACH investors looking for stable tech exposure.",
-            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/salesforce-inc-stock-surges-on-ai-driven-fiscal-2026-results-and-50b/68922984",
-            "sentiment_score": 0.207971,
-            "sentiment_label": "Somewhat-Bullish"
-        },
-        {
-            "source": "GGRAsia",
-            "title": "LVS appoints Singapore’s Woh Hup as main contractor for Marina Bay Sands expansion",
-            "published": "20260320T035049",
-            "summary": "Las Vegas Sands Corp (LVS) has awarded a multibillion-dollar contract to Singaporean civil engineering group Woh Hup (Pte) Ltd to be the main contractor for the Marina Bay Sands casino resort expansion. This 'MBS 2.0' project is scheduled for completion in 2030, with an opening in January 2031, and will feature a new 570-suite hotel tower, retail, gaming space, and a 15,000-seat arena. Marina Bay Sands is estimated to have contributed 1.2 percent to Singapore's GDP in 2025.",
-            "link": "https://www.ggrasia.com/lvs-appoints-singapores-woh-hup-as-main-contractor-for-marina-bay-sands-expansion",
-            "sentiment_score": 0.612055,
-            "sentiment_label": "Bullish"
-        },
-        {
-            "source": "Stock Titan",
-            "title": "[424B2] BANK OF AMERICA CORP /DE/ Prospectus Supplement",
-            "published": "20260320T030720",
-            "summary": "BofA Finance LLC, guaranteed by Bank of America Corporation, is offering Fixed Income Yield Notes due March 23, 2028, with a fixed coupon of 9.50% per annum paid monthly. Payments depend on the individual performance of Verizon Communications Inc. (VZ) and the S&P 500® Index (SPX), and holders face principal loss if the least performing underlying declines over 35%. The offering highlights the risks, including credit risk of the issuers and market-linked exposure, and provides detailed tax information.",
-            "link": "https://www.stocktitan.net/sec-filings/BAC/424b2-bank-of-america-corp-de-prospectus-supplement-2cdc6d67ed7b.html",
-            "sentiment_score": 3.9e-05,
-            "sentiment_label": "Neutral"
         }
     ],
     "upcoming_economic_events": [
