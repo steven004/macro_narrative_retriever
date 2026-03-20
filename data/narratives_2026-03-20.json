@@ -1,0 +1,499 @@
+{
+    "snapshot_date": "2026-03-20",
+    "total_news_items": 16,
+    "total_calendar_events": 42,
+    "news_narratives": [
+        {
+            "source": "Yahoo_Finance",
+            "title": "4 gold storage myths debunked",
+            "published": "2026-03-11T20:47:49Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/personal-finance/investing/article/4-gold-storage-myths-debunked-204749637.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "Nat-Gas Prices Rebound as European Gas Prices Surge on Iran Risks",
+            "published": "2026-03-18T19:16:46Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/news/nat-gas-prices-rebound-european-191646284.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "Crude Oil Prices Rise as Iran Threatens Attacks on Middle Eastern Energy Infrastructure",
+            "published": "2026-03-18T19:18:22Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/news/crude-oil-prices-rise-iran-191822533.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "If you divorce, who gets the gold?",
+            "published": "2026-03-02T19:52:24Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/personal-finance/investing/article/if-you-divorce-who-gets-the-gold-195224805.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "Nebius Stock Just Reminded Investors About Its Biggest Risk",
+            "published": "2026-03-18T19:20:00Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/news/nebius-stock-just-reminded-investors-192000200.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "How the Fed rate changes impact student loan interest rates",
+            "published": "2026-03-18T19:19:43Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/news/fed-impacts-student-loans-195636190.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "Gold IRA vs. physical gold: Which is the better investment?",
+            "published": "2026-03-10T22:46:54Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/personal-finance/investing/article/gold-ira-vs-physical-gold-224654072.html"
+        },
+        {
+            "source": "Yahoo_Finance",
+            "title": "What would happen if all of the world's gold were sold tomorrow?",
+            "published": "2026-03-03T19:57:37Z",
+            "summary": "",
+            "link": "https://finance.yahoo.com/personal-finance/investing/article/what-would-happen-if-all-of-the-worlds-gold-were-sold-tomorrow-195737847.html"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek",
+            "published": "Mon, 27 Jan 2025 14:26:00 -0500",
+            "summary": "U.S. stocks were mostly lower, with the Nasdaq leading declines as makers of AI infrastructure suffered steep falls, many in the double digits. Nvidia was down 16%.",
+            "link": "https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Comex Gold, Silver Settle Lower",
+            "published": "Mon, 27 Jan 2025 14:01:00 -0500",
+            "summary": "Gold settled 1.4% lower, down two of the past three sessions, and silver fell 2.5%, down three of the past four sessions.",
+            "link": "https://www.wsj.com/articles/gold-edges-lower-feds-rate-decision-in-focus-09dbfceb?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "DeepSeek Won't Sink U.S. AI Titans",
+            "published": "Mon, 27 Jan 2025 13:12:00 -0500",
+            "summary": "Panic fueling the selloff of Nvidia, Broadcom and other tech giants is overblown.",
+            "link": "https://www.wsj.com/articles/deepseek-us-ai-stocks-nvidia-broadcom-6cdfae81?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Financial Services Roundup: Market Talk",
+            "published": "Mon, 27 Jan 2025 12:27:00 -0500",
+            "summary": "Gain insight on Experian, SoFi Technologies and more in the latest Market Talks covering Financial Services.",
+            "link": "https://www.wsj.com/articles/financial-services-roundup-market-talk-94f52cba?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Arabica Coffee Prices Hit Record on U.S., Colombia Tariff Spat",
+            "published": "Mon, 27 Jan 2025 12:20:00 -0500",
+            "summary": "Arabica coffee prices hit a record level, as traders digested the withdrawal of President Trump’s threats to impose tariffs and economic sanctions on Colombia.",
+            "link": "https://www.wsj.com/articles/arabica-coffee-prices-hit-new-high-on-u-s-colombia-tariff-spat-582446fe?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens",
+            "published": "Mon, 27 Jan 2025 09:55:00 -0500",
+            "summary": "The Yen and Swiss Franc were stronger against the dollar as investors sought safe havens after Chinese start-up DeepSeek’s new AI model hit U.S. tech stocks.",
+            "link": "https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Natural Gas Falls on Shifting Weather Forecasts",
+            "published": "Mon, 27 Jan 2025 09:05:00 -0500",
+            "summary": "U.S. natural gas futures fell after weekend updates took some of the chill out of early February weather forecasts.",
+            "link": "https://www.wsj.com/articles/u-s-natural-gas-futures-fall-on-shifting-weather-forecasts-1ef3e457?mod=rss_markets_main"
+        },
+        {
+            "source": "WSJ_Markets",
+            "title": "Building-Products Distributor QXO Launches Hostile Bid for Beacon",
+            "published": "Mon, 27 Jan 2025 08:28:00 -0500",
+            "summary": "QXO is taking its offer directly to shareholders after being rebuffed on several occasions.",
+            "link": "https://www.wsj.com/articles/building-products-distributor-qxo-launching-hostile-bid-for-beacon-de024410?mod=rss_markets_main"
+        }
+    ],
+    "upcoming_economic_events": [
+        {
+            "country": "CAD",
+            "event": "CPI m/m",
+            "date": "03-16-2026",
+            "time": "12:30pm",
+            "impact": "High",
+            "forecast": "0.7%",
+            "previous": "0.0%"
+        },
+        {
+            "country": "CAD",
+            "event": "Median CPI y/y",
+            "date": "03-16-2026",
+            "time": "12:30pm",
+            "impact": "High",
+            "forecast": "2.4%",
+            "previous": "2.5%"
+        },
+        {
+            "country": "CAD",
+            "event": "Trimmed CPI y/y",
+            "date": "03-16-2026",
+            "time": "12:30pm",
+            "impact": "High",
+            "forecast": "2.4%",
+            "previous": "2.4%"
+        },
+        {
+            "country": "CAD",
+            "event": "Common CPI y/y",
+            "date": "03-16-2026",
+            "time": "12:30pm",
+            "impact": "Medium",
+            "forecast": "2.6%",
+            "previous": "2.7%"
+        },
+        {
+            "country": "USD",
+            "event": "Empire State Manufacturing Index",
+            "date": "03-16-2026",
+            "time": "12:30pm",
+            "impact": "Medium",
+            "forecast": "4.0",
+            "previous": "7.1"
+        },
+        {
+            "country": "USD",
+            "event": "President Trump Speaks",
+            "date": "03-16-2026",
+            "time": "3:30pm",
+            "impact": "Medium",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "AUD",
+            "event": "Cash Rate",
+            "date": "03-17-2026",
+            "time": "3:30am",
+            "impact": "High",
+            "forecast": "4.10%",
+            "previous": "3.85%"
+        },
+        {
+            "country": "AUD",
+            "event": "RBA Rate Statement",
+            "date": "03-17-2026",
+            "time": "3:30am",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "AUD",
+            "event": "RBA Press Conference",
+            "date": "03-17-2026",
+            "time": "4:30am",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "USD",
+            "event": "Pending Home Sales m/m",
+            "date": "03-17-2026",
+            "time": "2:00pm",
+            "impact": "Medium",
+            "forecast": "-0.6%",
+            "previous": "-0.8%"
+        },
+        {
+            "country": "USD",
+            "event": "Core PPI m/m",
+            "date": "03-18-2026",
+            "time": "12:30pm",
+            "impact": "High",
+            "forecast": "0.3%",
+            "previous": "0.8%"
+        },
+        {
+            "country": "USD",
+            "event": "PPI m/m",
+            "date": "03-18-2026",
+            "time": "12:30pm",
+            "impact": "High",
+            "forecast": "0.3%",
+            "previous": "0.5%"
+        },
+        {
+            "country": "CAD",
+            "event": "BOC Rate Statement",
+            "date": "03-18-2026",
+            "time": "1:45pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "CAD",
+            "event": "Overnight Rate",
+            "date": "03-18-2026",
+            "time": "1:45pm",
+            "impact": "High",
+            "forecast": "2.25%",
+            "previous": "2.25%"
+        },
+        {
+            "country": "CAD",
+            "event": "BOC Press Conference",
+            "date": "03-18-2026",
+            "time": "2:30pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "USD",
+            "event": "Federal Funds Rate",
+            "date": "03-18-2026",
+            "time": "6:00pm",
+            "impact": "High",
+            "forecast": "3.75%",
+            "previous": "3.75%"
+        },
+        {
+            "country": "USD",
+            "event": "FOMC Economic Projections",
+            "date": "03-18-2026",
+            "time": "6:00pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "USD",
+            "event": "FOMC Statement",
+            "date": "03-18-2026",
+            "time": "6:00pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "USD",
+            "event": "FOMC Press Conference",
+            "date": "03-18-2026",
+            "time": "6:30pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "NZD",
+            "event": "GDP q/q",
+            "date": "03-18-2026",
+            "time": "9:45pm",
+            "impact": "High",
+            "forecast": "0.5%",
+            "previous": "1.1%"
+        },
+        {
+            "country": "AUD",
+            "event": "Employment Change",
+            "date": "03-19-2026",
+            "time": "12:30am",
+            "impact": "High",
+            "forecast": "20.8K",
+            "previous": "17.8K"
+        },
+        {
+            "country": "AUD",
+            "event": "Unemployment Rate",
+            "date": "03-19-2026",
+            "time": "12:30am",
+            "impact": "High",
+            "forecast": "4.1%",
+            "previous": "4.1%"
+        },
+        {
+            "country": "JPY",
+            "event": "BOJ Policy Rate",
+            "date": "03-19-2026",
+            "time": "2:46am",
+            "impact": "High",
+            "forecast": "<0.75%",
+            "previous": "<0.75%"
+        },
+        {
+            "country": "JPY",
+            "event": "Monetary Policy Statement",
+            "date": "03-19-2026",
+            "time": "2:46am",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "JPY",
+            "event": "BOJ Press Conference",
+            "date": "03-19-2026",
+            "time": "6:30am",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "GBP",
+            "event": "Claimant Count Change",
+            "date": "03-19-2026",
+            "time": "7:00am",
+            "impact": "High",
+            "forecast": "25.8K",
+            "previous": "28.6K"
+        },
+        {
+            "country": "GBP",
+            "event": "Average Earnings Index 3m/y",
+            "date": "03-19-2026",
+            "time": "7:00am",
+            "impact": "Medium",
+            "forecast": "3.9%",
+            "previous": "4.2%"
+        },
+        {
+            "country": "CHF",
+            "event": "SNB Monetary Policy Assessment",
+            "date": "03-19-2026",
+            "time": "8:30am",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "CHF",
+            "event": "SNB Policy Rate",
+            "date": "03-19-2026",
+            "time": "8:30am",
+            "impact": "High",
+            "forecast": "0.00%",
+            "previous": "0.00%"
+        },
+        {
+            "country": "CHF",
+            "event": "SNB Press Conference",
+            "date": "03-19-2026",
+            "time": "9:00am",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "GBP",
+            "event": "Monetary Policy Summary",
+            "date": "03-19-2026",
+            "time": "12:00pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "GBP",
+            "event": "MPC Official Bank Rate Votes",
+            "date": "03-19-2026",
+            "time": "12:00pm",
+            "impact": "High",
+            "forecast": "0-2-7",
+            "previous": "0-4-5"
+        },
+        {
+            "country": "GBP",
+            "event": "Official Bank Rate",
+            "date": "03-19-2026",
+            "time": "12:00pm",
+            "impact": "High",
+            "forecast": "3.75%",
+            "previous": "3.75%"
+        },
+        {
+            "country": "USD",
+            "event": "Unemployment Claims",
+            "date": "03-19-2026",
+            "time": "12:30pm",
+            "impact": "High",
+            "forecast": "215K",
+            "previous": "213K"
+        },
+        {
+            "country": "USD",
+            "event": "Philly Fed Manufacturing Index",
+            "date": "03-19-2026",
+            "time": "12:30pm",
+            "impact": "Medium",
+            "forecast": "8.3",
+            "previous": "16.3"
+        },
+        {
+            "country": "EUR",
+            "event": "Main Refinancing Rate",
+            "date": "03-19-2026",
+            "time": "1:15pm",
+            "impact": "High",
+            "forecast": "2.15%",
+            "previous": "2.15%"
+        },
+        {
+            "country": "EUR",
+            "event": "Monetary Policy Statement",
+            "date": "03-19-2026",
+            "time": "1:15pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "EUR",
+            "event": "ECB Press Conference",
+            "date": "03-19-2026",
+            "time": "1:45pm",
+            "impact": "High",
+            "forecast": null,
+            "previous": null
+        },
+        {
+            "country": "USD",
+            "event": "New Home Sales",
+            "date": "03-19-2026",
+            "time": "2:00pm",
+            "impact": "Medium",
+            "forecast": "722K",
+            "previous": "745K"
+        },
+        {
+            "country": "CAD",
+            "event": "Core Retail Sales m/m",
+            "date": "03-20-2026",
+            "time": "12:30pm",
+            "impact": "Medium",
+            "forecast": "1.2%",
+            "previous": "0.1%"
+        },
+        {
+            "country": "CAD",
+            "event": "Retail Sales m/m",
+            "date": "03-20-2026",
+            "time": "12:30pm",
+            "impact": "Medium",
+            "forecast": "1.4%",
+            "previous": "-0.4%"
+        },
+        {
+            "country": "USD",
+            "event": "Fed Chair Powell Speaks",
+            "date": "03-21-2026",
+            "time": "5:30pm",
+            "impact": "Medium",
+            "forecast": null,
+            "previous": null
+        }
+    ]
+}
