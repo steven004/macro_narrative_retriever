@@ -17,7 +17,7 @@ def main():
     output_file = os.path.join(args.out_dir, f"narratives_{today_str}.json")
     
     print("Fetching Top Macro News and Narratives...")
-    news_data = fetch_macro_news(max_items_per_feed=8)
+    news_data = fetch_macro_news(max_items=15)
     print(f"Retrieved {len(news_data)} top news articles.")
     
     print("Fetching Global Economic Calendar Events...")

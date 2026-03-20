@@ -1,8 +1,144 @@
 {
     "snapshot_date": "2026-03-20",
-    "total_news_items": 0,
+    "total_news_items": 15,
     "total_calendar_events": 11,
-    "news_narratives": [],
+    "news_narratives": [
+        {
+            "source": "MarketBeat",
+            "title": "CIBC Bancorp USA Inc. Takes $14.79 Million Position in Southern Company (The) $SO",
+            "published": "20260320T075429",
+            "summary": "CIBC Bancorp USA Inc. has acquired a new position in Southern Company (The) (NYSE:SO) during the third quarter, purchasing 156,073 shares valued at approximately $14.79 million. This move is part of broader institutional interest in Southern Company, with other major investors like Vanguard Group Inc. and Capital World Investors also significantly holding or increasing their stakes. Despite an overall \"Hold\" rating from analysts and a consensus price target of $98.08, the company maintains a substantial market cap, a 3.1% dividend yield, and recently reported quarterly earnings that narrowly missed analyst estimates.",
+            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-1479-million-position-in-southern-company-the-so-2026-03-20/",
+            "sentiment_score": 0.137311,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "MarketBeat",
+            "title": "CIBC Bancorp USA Inc. Invests $18.28 Million in Public Storage $PSA",
+            "published": "20260320T075227",
+            "summary": "CIBC Bancorp USA Inc. has acquired a new stake of 63,286 shares in Public Storage (NYSE:PSA), valued at approximately $18.28 million, during the third quarter. This investment comes alongside other large institutional movements in PSA stock, with many firms either increasing their holdings or initiating new positions. Public Storage also announced a quarterly dividend of $3.00 per share, indicating a 4.3% annual yield, while analysts have a mixed view on the stock, with an average \"Hold\" rating.",
+            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-invests-1828-million-in-public-storage-psa-2026-03-20/",
+            "sentiment_score": 0.145114,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "MarketBeat",
+            "title": "CIBC Bancorp USA Inc. Takes $16.16 Million Position in Lockheed Martin Corporation $LMT",
+            "published": "20260320T075205",
+            "summary": "CIBC Bancorp USA Inc. acquired a new stake of 32,376 shares, valued at approximately $16.16 million, in Lockheed Martin Corporation during the third quarter. This move is part of broader institutional investor activity, with several other hedge funds also adjusting their positions in the aerospace company. The article also highlights recent positive sentiment for Lockheed Martin due to potential increases in Pentagon spending related to geopolitical conflicts, analyst target raises, and new strategic contracts, alongside an acknowledgment of some program-level execution risks.",
+            "link": "https://www.marketbeat.com/instant-alerts/filing-cibc-bancorp-usa-inc-takes-1616-million-position-in-lockheed-martin-corporation-lmt-2026-03-20/",
+            "sentiment_score": 0.431328,
+            "sentiment_label": "Bullish"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "3M Company Aktie: Industrial Giant Navigates Legal Headwinds and Growth Challenges in 2026",
+            "published": "20260320T070803",
+            "summary": "3M Company is facing scrutiny due to ongoing litigation settlements and shifting industrial demand, particularly after a $10 billion earplug lawsuit settlement. Despite these challenges, the company posted mixed quarterly results with organic sales growth, and is strategically pivoting to high-growth areas like electrification and biopharma filtration. German-speaking investors are showing interest in 3M's European presence and stable dividend yield, though risks from PFAS litigation and macroeconomic headwinds remain.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/3m-company-aktie-industrial-giant-navigates-legal-headwinds-and-growth/68927684",
+            "sentiment_score": 0.026538,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "Barchart",
+            "title": "Is Pool Corporation Stock Underperforming the S&P 500?",
+            "published": "20260320T070716",
+            "summary": "Pool Corporation (POOL), the world's largest wholesale distributor of swimming pool products, has significantly underperformed the S&P 500. Over the past year, POOL stock has dropped 36.6% while the S&P 500 gained 16.4%, and it continues a downtrend below key moving averages. Despite this, the company maintains consistent dividend payments, and Wall Street analysts currently rate it a \"Moderate Buy\" with an implied potential upside of over 30%.",
+            "link": "https://www.barchart.com/story/news/857321/is-pool-corporation-stock-underperforming-the-s-p-500",
+            "sentiment_score": -0.201586,
+            "sentiment_label": "Somewhat-Bearish"
+        },
+        {
+            "source": "Construction Review",
+            "title": "Woh Hup Awarded Multi-Billion-Dollar Main Contract for Las Vegas Sands' US$8 Billion Marina Bay Sands IR2 Expansion in Singapore",
+            "published": "20260320T064158",
+            "summary": "Woh Hup Private Limited has been awarded a multi-billion-dollar main construction contract by Las Vegas Sands for the Marina Bay Sands IR2 expansion in Singapore. The US$8 billion project, which broke ground in July 2025, will feature a 55-story all-suite hotel, a 76,000 sq ft Skyloop rooftop, and a 15,000-seat entertainment arena. The expansion is scheduled for completion in June 2030 and eyes an early 2031 opening, demonstrating a significant investment in Singapore's tourism and MICE sectors.",
+            "link": "https://constructionreviewonline.com/woh-hup-awarded-multi-billion-dollar-main-contract-for-las-vegas-sands-us8-billion-marina-bay-sands-ir2-expansion-in-singapore/",
+            "sentiment_score": 0.432207,
+            "sentiment_label": "Bullish"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "InterContinental Hotels Group PLC Aktie: Strong 2025 Results Drive Momentum into 2026 Amid Global Travel Recovery",
+            "published": "20260320T054023",
+            "summary": "InterContinental Hotels Group PLC reported robust full-year 2025 results, demonstrating strong revenue growth, expanded system size, and over $1.1 billion returned to shareholders. The company's asset-light franchising model and diverse brand portfolio position it for continued growth amid global travel recovery, appealing to DACH investors with its predictable cash flows and shareholder-centric capital allocation. Despite potential risks like economic slowdowns and geopolitical tensions, the firm's strategic focus and strong market fundamentals are expected to drive sustained momentum into 2026.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/intercontinental-hotels-group-plc-aktie-strong-2025-results-drive/68923568",
+            "sentiment_score": -0.053309,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "Yahoo News Singapore",
+            "title": "Woh Hup to build Las Vegas Sands’ new Marina Bay project",
+            "published": "20260320T052400",
+            "summary": "Woh Hup, a Singaporean construction giant, has been awarded a multi-billion-dollar contract to build Las Vegas Sands' new US$8 billion ($10.2 billion S$) resort and entertainment complex next to Marina Bay Sands. The luxury development, designed by Safdie Architects and set for completion in 2030, will include a 55-storey hotel, casino, entertainment arena, and convention space. This project reinforces Las Vegas Sands' commitment to Singapore and is part of a larger plan to transform Singapore's southern waterfront.",
+            "link": "https://sg.news.yahoo.com/woh-hup-build-las-vegas-052459208.html",
+            "sentiment_score": 0.406121,
+            "sentiment_label": "Bullish"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "Pentair plc Aktie: Strong Earnings Momentum and 2026 Guidance Lift Outlook for Water Solutions Leade",
+            "published": "20260320T043406",
+            "summary": "Pentair plc (NYSE: PNR) has reported strong Q4 2025 earnings, beating analyst expectations, and provided an optimistic FY 2026 EPS guidance of $5.25-$5.40. This performance, driven by demand for water solutions in residential and industrial segments, positions the company for sustained growth. The stock offers a compelling blend of growth, income, and resilience, making it attractive to DACH investors despite potential risks like commodity inflation and housing market sensitivity.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/pentair-plc-aktie-strong-earnings-momentum-and-2026-guidance-lift-outlook/68923235",
+            "sentiment_score": 0.465813,
+            "sentiment_label": "Bullish"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "KeyCorp Aktie: Regional Bank Faces Interest Rate Pressures Amid Economic Shifts",
+            "published": "20260320T042648",
+            "summary": "KeyCorp, a Cleveland-based regional lender, is navigating a challenging environment due to shifting interest rates and deposit competition. The bank faces pressure on net interest margins as funding costs rise and deposit growth slows, even as its CET1 capital ratio remains solid. German investors are closely watching KeyCorp as a key indicator for the US banking sector, considering its dividend yield and exposure to regional growth.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/keycorp-aktie-regional-bank-faces-interest-rate-pressures-amid-economic/68923183",
+            "sentiment_score": -0.145082,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "GuruFocus",
+            "title": "Decoding FedEx Corp (FDX): A Strategic SWOT Insight",
+            "published": "20260320T042634",
+            "summary": "This article provides a strategic SWOT analysis of FedEx Corp (FDX), highlighting its strengths in market leadership and financial robustness, alongside weaknesses like macroeconomic sensitivity and high operating costs. It identifies opportunities in digital expansion and global e-commerce, while also pointing out threats from changing global trade policies and geopolitical conflicts. The analysis is based on FedEx's recent 10-Q report, offering insights into the company's performance and strategic positioning.",
+            "link": "https://www.gurufocus.com/news/8728247/decoding-fedex-corp-fdx-a-strategic-swot-insight",
+            "sentiment_score": 0.028213,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "National Beverage Corp Aktie draws DACH investor attention amid sparkling water surge and stable ear",
+            "published": "20260320T041010",
+            "summary": "National Beverage Corp (ISIN: US6350171061) reported steady Q2 results with its LaCroix brand driving growth in the US health beverage market, sparking interest from German-speaking (DACH) investors. The company's shares rose on NASDAQ as consumer demand shifted toward low-calorie options, and its debt-free balance sheet and 5% dividend yield are appealing in uncertain economic times. Analysts project continued EPS growth, making it an attractive play for diversification and defensive qualities in DACH portfolios.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/national-beverage-corp-aktie-draws-dach-investor-attention-amid-sparkling/68923056",
+            "sentiment_score": 0.042182,
+            "sentiment_label": "Neutral"
+        },
+        {
+            "source": "AD HOC NEWS",
+            "title": "Salesforce, Inc. stock surges on AI-driven fiscal 2026 results and $50B buyback amid growth concerns",
+            "published": "20260320T040115",
+            "summary": "Salesforce reported strong fiscal 2026 results with $41.5 billion in revenue, driven significantly by its AI platform, Agentforce, which achieved an $800 million annual run rate. Despite initial concerns over fiscal year 2027 guidance, a massive $50 billion share repurchase program bolstered investor confidence, causing the stock to rebound. This blend of AI innovation and capital returns positions Salesforce as a compelling investment, particularly for DACH investors looking for stable tech exposure.",
+            "link": "https://www.ad-hoc-news.de/boerse/news/ueberblick/salesforce-inc-stock-surges-on-ai-driven-fiscal-2026-results-and-50b/68922984",
+            "sentiment_score": 0.207971,
+            "sentiment_label": "Somewhat-Bullish"
+        },
+        {
+            "source": "GGRAsia",
+            "title": "LVS appoints Singapore’s Woh Hup as main contractor for Marina Bay Sands expansion",
+            "published": "20260320T035049",
+            "summary": "Las Vegas Sands Corp (LVS) has awarded a multibillion-dollar contract to Singaporean civil engineering group Woh Hup (Pte) Ltd to be the main contractor for the Marina Bay Sands casino resort expansion. This 'MBS 2.0' project is scheduled for completion in 2030, with an opening in January 2031, and will feature a new 570-suite hotel tower, retail, gaming space, and a 15,000-seat arena. Marina Bay Sands is estimated to have contributed 1.2 percent to Singapore's GDP in 2025.",
+            "link": "https://www.ggrasia.com/lvs-appoints-singapores-woh-hup-as-main-contractor-for-marina-bay-sands-expansion",
+            "sentiment_score": 0.612055,
+            "sentiment_label": "Bullish"
+        },
+        {
+            "source": "Stock Titan",
+            "title": "[424B2] BANK OF AMERICA CORP /DE/ Prospectus Supplement",
+            "published": "20260320T030720",
+            "summary": "BofA Finance LLC, guaranteed by Bank of America Corporation, is offering Fixed Income Yield Notes due March 23, 2028, with a fixed coupon of 9.50% per annum paid monthly. Payments depend on the individual performance of Verizon Communications Inc. (VZ) and the S&P 500® Index (SPX), and holders face principal loss if the least performing underlying declines over 35%. The offering highlights the risks, including credit risk of the issuers and market-linked exposure, and provides detailed tax information.",
+            "link": "https://www.stocktitan.net/sec-filings/BAC/424b2-bank-of-america-corp-de-prospectus-supplement-2cdc6d67ed7b.html",
+            "sentiment_score": 3.9e-05,
+            "sentiment_label": "Neutral"
+        }
+    ],
     "upcoming_economic_events": [
         {
             "country": "USD",
