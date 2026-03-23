@@ -21,22 +21,27 @@ if [ ! -f "venv/bin/activate" ] && [ ! -f "venv/Scripts/activate" ]; then
     
     python3 -m venv venv || { echo "Error: Failed to create virtual environment"; exit 1; }
     
-    # Cross-platform activation and install
-    if [ -f "venv/bin/activate" ]; then
-        source venv/bin/activate
-    elif [ -f "venv/Scripts/activate" ]; then
-        source venv/Scripts/activate
+    # Cross-platform install
+    if [ -f "venv/bin/pip3" ]; then
+        ./venv/bin/pip3 install -r requirements.txt || { echo "Error: Failed to install requirements"; exit 1; }
+    elif [ -f "venv/Scripts/pip" ]; then
+        ./venv/Scripts/pip install -r requirements.txt || { echo "Error: Failed to install requirements"; exit 1; }
+    elif [ -f "venv/bin/pip" ]; then
+        ./venv/bin/pip install -r requirements.txt || { echo "Error: Failed to install requirements"; exit 1; }
+    else
+        echo "Error: pip not found inside virtual environment."
+        exit 1
     fi
-    
-    pip install -r requirements.txt || { echo "Error: Failed to install requirements"; exit 1; }
-    deactivate
 fi
 
-# Execute the main script safely using the virtual environment
-if [ -f "venv/bin/activate" ]; then
-    source venv/bin/activate
-elif [ -f "venv/Scripts/activate" ]; then
-    source venv/Scripts/activate
+# Execute the main script safely using the direct virtual environment binary
+if [ -f "venv/bin/python3" ]; then
+    ./venv/bin/python3 main.py "$@"
+elif [ -f "venv/Scripts/python" ]; then
+    ./venv/Scripts/python main.py "$@"
+elif [ -f "venv/bin/python" ]; then
+    ./venv/bin/python main.py "$@"
+else
+    echo "Error: Python executable not found in virtual environment."
+    exit 1
 fi
-
-python main.py "$@"
