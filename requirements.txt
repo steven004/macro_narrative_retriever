@@ -1,5 +1,6 @@
 feedparser
 requests
+urllib3<2
 beautifulsoup4
 python-dateutil
 google-genai
