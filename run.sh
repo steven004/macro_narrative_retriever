@@ -11,8 +11,13 @@ if [ ! -d "venv" ]; then
         export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
     fi
     
-    python3 -m venv venv
-    ./venv/bin/pip install -r requirements.txt
+    if ! command -v python3 &> /dev/null; then
+        echo "Error: python3 could not be found. Please install Python 3."
+        exit 1
+    fi
+    
+    python3 -m venv venv || { echo "Error: Failed to create virtual environment"; exit 1; }
+    ./venv/bin/pip install -r requirements.txt || { echo "Error: Failed to install requirements"; exit 1; }
 fi
 
 # Execute the main script safely using the virtual environment
