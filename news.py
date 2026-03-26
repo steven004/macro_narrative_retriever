@@ -46,13 +46,13 @@ def filter_news_with_llm(news_list):
         })
         
     prompt = """
-    你是一个经验丰富的宏观对冲基金数据审核员。你的任务是从混合新闻流中，精准提取出【宏观经济与大类资产新闻】，并剔除纯粹的【微观个股噪音】。
+    你是一个经验丰富的宏观对冲基金数据审核员。你的任务是从混合新闻流中，精准提取出【宏观经济与大类资产新闻】，并剔除纯粹的【微观个股噪音】或者低价值信息。
 
-    【判定为 is_macro: TRUE 的标准（包含宏观传导）】：
+    【判定为 宏观 的标准（包含宏观传导）】：
     1. 纯粹宏观： 探讨国家经济、通胀、美联储/央行政策、地缘政治、大宗商品（原油/黄金总量）、主权债券等。
     2. 宏观向微观的传导（重要！）： 如果新闻的核心是探讨宏观事件（如利率变化、经济数据发布）如何广泛影响某个行业板块（如银行业、科技股）或大盘指数。注意：即使这类新闻中拿了具体的公司（如苹果、英伟达）作为举例，只要其核心叙事是宏观驱动的，依然必须判定为 TRUE！
 
-    【判定为 is_macro: FALSE 的绝对红线（纯微观噪音）】：
+    【纯微观噪音的绝对红线】：
     新闻的绝对核心只围绕 1-2 家单体公司的内部事件（如：某公司发财报、换CEO、个股评级上调/下调、内部人员买卖股票、具体的产品发布会）。
 
     【打分标准 (importance_score 1-10)】：
@@ -60,9 +60,13 @@ def filter_news_with_llm(news_list):
     7-9分：重要宏观数据发布（CPI、非农）或重要地缘/板块动荡。
     4-6分：日常宏观经济评论或二线经济体数据。
     1-3分：边缘宏观噪音。
-    (如果 is_macro 为 false，importance_score 直接写 0)
 
-    请直接返回一个严格的 JSON 数组，格式为：[{"id": 0, "is_macro": true, "importance_score": 8, "reason": "简短原因"}]
+    【极其重要的输出格式要求（为了节省Token）】：
+    请**只输出**那些被判定为宏观事件，且 `importance_score >= 4` 的新闻条目！
+    对于纯微观噪音、无效信息、或是分值低于4分的新闻，请**完全忽略，绝对不要包含在输出的 JSON 数组中**！
+
+    请直接返回一个严格的 JSON 数组，格式为：[{"id": 0, "importance_score": 8, "reason": "简短原因"}]
+    如果所有传入的新闻都不符合标准，请返回空数组 []。
 
     以下是需要判定的新闻列表：
     """ + json.dumps(llm_payload, ensure_ascii=False)
@@ -83,7 +87,7 @@ def filter_news_with_llm(news_list):
         dropped_llm = 0
         for i, news in enumerate(news_list):
             judge = judgment_map.get(i)
-            if judge and judge.get("is_macro"):
+            if judge:
                 news["llm_reason"] = judge.get("reason", "")
                 news["importance_score"] = judge.get("importance_score", 0)
                 filtered_news.append(news)
@@ -93,7 +97,7 @@ def filter_news_with_llm(news_list):
         # Sort aggressively by importance score (highest to lowest)
         filtered_news.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
                 
-        print(f"[LLM_Filter] Gemini evaluated {len(news_list)} items | Dropped (Micro Noise): {dropped_llm} | Kept (Pure Macro): {len(filtered_news)}")
+        print(f"[LLM_Filter] Gemini evaluated {len(news_list)} items | Dropped (Micro/Low-Score): {dropped_llm} | Kept (Pure Macro >= 4): {len(filtered_news)}")
         return filtered_news
         
     except Exception as e:

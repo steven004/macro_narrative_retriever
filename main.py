@@ -2,32 +2,44 @@ import os
 import json
 import argparse
 from datetime import datetime
-from news import fetch_macro_news
-from calendar_events import fetch_economic_calendar
 
 def main():
     parser = argparse.ArgumentParser(description="Macro Narrative Retriever")
     parser.add_argument("--out-dir", type=str, default="data", help="Directory to store the JSON narrative files")
+    parser.add_argument("--region", type=str, choices=["Global", "China"], default="Global", help="Region to fetch macro news from")
     args = parser.parse_args()
     
     if not os.path.exists(args.out_dir):
         os.makedirs(args.out_dir)
         
     today_str = datetime.now().strftime("%Y-%m-%d")
-    output_file = os.path.join(args.out_dir, f"narratives_{today_str}.json")
+    output_file = os.path.join(args.out_dir, f"narratives_{args.region}_{today_str}.json")
     
-    print("Fetching Top Macro News and Narratives...")
-    news_data = fetch_macro_news(max_items=8)
-    print(f"Retrieved {len(news_data)} top news articles.")
-    
-    print("Fetching Global Economic Calendar Events...")
-    # Fetch specific High-Impact and Powell/FOMC events natively seamlessly intelligently explicitly securely perfectly appropriately flawlessly properly
-    calendar_data = fetch_economic_calendar()
-    print(f"Retrieved {len(calendar_data)} filtered portfolio-specific calendar events for this week.")
-    
+    if args.region == "Global":
+        from news import fetch_macro_news
+        from calendar_events import fetch_economic_calendar
+        print("Fetching Top Global Macro News and Narratives...")
+        news_data = fetch_macro_news(max_items=8)
+        print(f"Retrieved {len(news_data)} top global news articles.")
+        
+        print("Fetching Global Economic Calendar Events...")
+        calendar_data = fetch_economic_calendar()
+        print(f"Retrieved {len(calendar_data)} calendar events.")
+        
+    elif args.region == "China":
+        from domestic_news import fetch_domestic_macro_news
+        print("Fetching Top Domestic (China) Macro News via AkShare...")
+        news_data = fetch_domestic_macro_news(max_items=8)
+        print(f"Retrieved {len(news_data)} top domestic news articles from hundreds of raw items.")
+        
+        # Currently no domestic economic calendar requested; placeholder.
+        calendar_data = []
+        print("Using empty calendar events for Domestic scope.")
+
     # Compile the final LLM-friendly dictionary payload uniquely mapping structurally
     payload = {
         "snapshot_date": today_str,
+        "region": args.region,
         "total_news_items": len(news_data),
         "total_calendar_events": len(calendar_data),
         "news_narratives": news_data,
