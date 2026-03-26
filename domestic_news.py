@@ -4,20 +4,31 @@ import pandas as pd
 import requests
 import time
 
-MACRO_KEYWORDS = [
-    "央行", "美联储", "降息", "加息", "利率", "LPR", "MLF", "通胀", "CPI", "PPI", 
-    "PMI", "非农", "GDP", "发改委", "财政部", "外汇", "人民币", "汇率", 
-    "原油", "黄金", "OPEC", "地缘", "战争", "制裁", "关税", "贸易", "国务院", 
-    "房地产", "逆回购", "社融", "M2", "出口", "进口", "统计局", "证监会", "政治局",
-    "降准", "美债", "国债", "外储", "外资"
+MACRO_ENTITIES = [
+    "央行", "美联储", "发改委", "财政部", "统计局", "证监会", "政治局", 
+    "国务院", "外汇局", "欧洲央行", "日本央行", "OPEC", "住建部", "商社"
 ]
 
+MACRO_ACTIONS = [
+    "降息", "加息", "利率", "LPR", "MLF", "通胀", "CPI", "PPI", 
+    "PMI", "非农", "GDP", "逆回购", "社融", "M2", "出口", "进口", 
+    "关税", "外储", "降准", "美债", "国债", "外资", "救市", "刺激"
+]
+
+MACRO_CRITICAL = ["战争", "地缘", "制裁", "熔断", "金融危机", "主权评级", "黑天鹅"]
+
 def is_macro_related(text):
-    if not text:
+    if not text or len(text) < 15: # Filter out extremely fragmented 1-liners
         return False
-    for kw in MACRO_KEYWORDS:
-        if kw in text:
-            return True
+        
+    has_entity = any(kw in text for kw in MACRO_ENTITIES)
+    has_action = any(kw in text for kw in MACRO_ACTIONS)
+    has_critical = any(kw in text for kw in MACRO_CRITICAL)
+    
+    # Only keep the news if it contains a massive global crisis word, OR combines a top authority with an economic action!
+    if has_critical or (has_entity and has_action):
+        return True
+        
     return False
 
 def fetch_domestic_macro_news(max_items=8):
