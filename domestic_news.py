@@ -72,7 +72,7 @@ def fetch_domestic_macro_news(max_items=8):
         page = 1
         keep_fetching = True
         
-        while keep_fetching and page <= 25: # Max 25 pages to prevent infinite loops
+        while keep_fetching and page <= 100: # Max 100 pages (approx 36 hours of news volume)
             url = f"https://zhibo.sina.com.cn/api/zhibo/feed?page={page}&page_size=50&zhibo_id=152"
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
             r = requests.get(url, headers=headers, timeout=15)
