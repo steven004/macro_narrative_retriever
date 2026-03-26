@@ -1,10 +1,12 @@
 import os
 import json
 import requests
+import socket
 from datetime import datetime, timezone
 import warnings
 
 warnings.filterwarnings("ignore")
+socket.setdefaulttimeout(30) # Prevent Gemini SDK from hanging infinitely on dropped network connections
 
 from google import genai
 from google.genai import types
@@ -21,7 +23,7 @@ def get_api_keys():
         print(f"\033[91mFailed to load API keys securely from {config_path}: {e}\033[0m")
         return {}
 
-def filter_news_with_llm(news_list):
+def filter_news_with_llm(news_list, chunk_size=50):
     """
     Passes the raw news array to Gemini to act as a semantic judge.
     Returns a sorted list of structurally purified 'macro only' news based on importance.
@@ -37,15 +39,22 @@ def filter_news_with_llm(news_list):
         
     client = genai.Client(api_key=gemini_key)
     
-    llm_payload = []
-    for i, news in enumerate(news_list):
-        llm_payload.append({
-            "id": i,
-            "title": news.get("title", ""),
-            "summary": news.get("summary", "")
-        })
-        
-    prompt = """
+    filtered_news = []
+    dropped_llm = 0
+    
+    print(f"[LLM_Filter] Starting batch processing of {len(news_list)} items in chunks of {chunk_size}...")
+    
+    for i in range(0, len(news_list), chunk_size):
+        chunk = news_list[i:i+chunk_size]
+        llm_payload = []
+        for j, news in enumerate(chunk):
+            llm_payload.append({
+                "id": j,
+                "title": news.get("title", ""),
+                "summary": news.get("summary", "")
+            })
+            
+        prompt = """
     你是一个经验丰富的宏观对冲基金数据审核员。你的任务是从混合新闻流中，精准提取出【宏观经济与大类资产新闻】，并剔除纯粹的【微观个股噪音】或者低价值信息。
 
     【判定为 宏观 的标准（包含宏观传导）】：
@@ -69,40 +78,39 @@ def filter_news_with_llm(news_list):
     如果所有传入的新闻都不符合标准，请返回空数组 []。
 
     以下是需要判定的新闻列表：
-    """ + json.dumps(llm_payload, ensure_ascii=False)
-    
-    try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-            ),
-        )
+        """ + json.dumps(llm_payload, ensure_ascii=False)
         
-        judgments = json.loads(response.text)
-        judgment_map = {item["id"]: item for item in judgments if "id" in item}
-        
-        filtered_news = []
-        dropped_llm = 0
-        for i, news in enumerate(news_list):
-            judge = judgment_map.get(i)
-            if judge:
-                news["llm_reason"] = judge.get("reason", "")
-                news["importance_score"] = judge.get("importance_score", 0)
-                filtered_news.append(news)
-            else:
-                dropped_llm += 1
-                
-        # Sort aggressively by importance score (highest to lowest)
-        filtered_news.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
-                
-        print(f"[LLM_Filter] Gemini evaluated {len(news_list)} items | Dropped (Micro/Low-Score): {dropped_llm} | Kept (Pure Macro >= 4): {len(filtered_news)}")
-        return filtered_news
-        
-    except Exception as e:
-        print(f"\033[91m[LLM_Filter] Gemini API Failure: {e}\033[0m")
-        return news_list
+        try:
+            print(f"  -> Processing chunk {i//chunk_size + 1}/{(len(news_list)-1)//chunk_size + 1} ({len(chunk)} items)...")
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                ),
+            )
+            
+            judgments = json.loads(response.text)
+            judgment_map = {item["id"]: item for item in judgments if "id" in item}
+            
+            for j, news in enumerate(chunk):
+                judge = judgment_map.get(j)
+                if judge:
+                    news["llm_reason"] = judge.get("reason", "")
+                    news["importance_score"] = judge.get("importance_score", 0)
+                    filtered_news.append(news)
+                else:
+                    dropped_llm += 1
+                    
+        except Exception as e:
+            print(f"\033[91m  -> [LLM_Filter] Gemini API Failure on chunk {i//chunk_size + 1}: {e}\033[0m")
+            dropped_llm += len(chunk)
+            
+    # Sort aggressively by importance score (highest to lowest)
+    filtered_news.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
+            
+    print(f"[LLM_Filter] Gemini evaluated {len(news_list)} items total | Dropped: {dropped_llm} | Kept (Pure Macro >= 4): {len(filtered_news)}")
+    return filtered_news
 
 def fetch_macro_news(max_items=8):
     """
