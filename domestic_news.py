@@ -55,13 +55,13 @@ def fetch_yicai_news(max_items=10):
                 data = r.json()
                 for item in data:
                     title = item.get("NewsTitle", "")
-                    content = item.get("NewsContent", "") # Often a summary or intro
-                    # Yicai content can be short, we'll use NewsTitle + NewsContent
+                    content = item.get("NewsNotes", "") # Often a summary or intro
+                    # Yicai content can be short, we'll use NewsTitle + NewsNotes
                     candidates.append({
                         "source": "Yicai",
                         "title": title,
                         "summary": content,
-                        "published": item.get("CreateTime", ""),
+                        "published": item.get("CreateDate", ""),
                         "link": f"https://www.yicai.com/news/{item.get('NewsID')}.html"
                     })
         except Exception as e:

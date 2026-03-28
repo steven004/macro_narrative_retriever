@@ -23,7 +23,7 @@ def main():
         print(f"Retrieved {len(news_data)} top global news articles.")
         
         print("Fetching Global Economic Calendar Events...")
-        calendar_data = fetch_economic_calendar()
+        calendar_data = fetch_economic_calendar(region="Global")
         print(f"Retrieved {len(calendar_data)} calendar events.")
         
     elif args.region == "China":
@@ -32,9 +32,10 @@ def main():
         news_data = fetch_domestic_macro_news(max_items=8)
         print(f"Retrieved {len(news_data)} top domestic news articles from hundreds of raw items.")
         
-        # Currently no domestic economic calendar requested; placeholder.
-        calendar_data = []
-        print("Using empty calendar events for Domestic scope.")
+        print("Fetching China Specific Economic Calendar Events...")
+        from calendar_events import fetch_economic_calendar
+        calendar_data = fetch_economic_calendar(region="China")
+        print(f"Retrieved {len(calendar_data)} calendar events relevant to China.")
 
     # Compile the final LLM-friendly dictionary payload uniquely mapping structurally
     payload = {

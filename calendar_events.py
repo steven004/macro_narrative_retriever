@@ -8,7 +8,7 @@ FF_CALENDAR_URL = "https://nfs.faireconomy.media/ff_calendar_thisweek.xml"
 TARGET_CURRENCIES = ["USD", "EUR", "CNY", "SGD", "HKD"]
 POWELL_FOMC_KEYWORDS = ["Powell", "FOMC"]
 
-def fetch_economic_calendar():
+def fetch_economic_calendar(region="Global"):
     """
     Fetches scheduled economic events structurally natively.
     Filters exclusively for High impact events and specific portfolio currencies.
@@ -27,17 +27,24 @@ def fetch_economic_calendar():
                 country = event.find('country').text if event.find('country') is not None else ""
                 
                 # Filter entirely exclusively efficiently natively for target currencies
-                if country not in TARGET_CURRENCIES:
+                if region == "China" and country != "CNY":
+                    continue
+                elif region == "Global" and country not in TARGET_CURRENCIES:
                     continue
                     
                 title = event.find('title').text if event.find('title') is not None else ""
                 impact = event.find('impact').text if event.find('impact') is not None else ""
                 
                 # Check impact filter efficiently perfectly appropriately accurately
-                is_high_impact = (impact == "High")
-                is_exception = any(kw.lower() in title.lower() for kw in POWELL_FOMC_KEYWORDS)
+                if region == "China":
+                    # For China, we accept ALL impacts since CNY events are rare on this specific FF calendar
+                    is_valid_impact = True
+                    is_exception = False
+                else:
+                    is_valid_impact = (impact == "High")
+                    is_exception = any(kw.lower() in title.lower() for kw in POWELL_FOMC_KEYWORDS)
                 
-                if not (is_high_impact or is_exception):
+                if not (is_valid_impact or is_exception):
                     continue
                     
                 date_str = event.find('date').text if event.find('date') is not None else ""
