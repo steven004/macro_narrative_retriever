@@ -6,3 +6,4 @@ python-dateutil
 google-genai
 akshare
 pandas
+curl_cffi
